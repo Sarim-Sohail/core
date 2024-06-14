@@ -1382,7 +1382,7 @@ const no = () => {
       t(!!n);
     });
   }, [r, t]), /* @__PURE__ */ h("div", { children: !e && /* @__PURE__ */ h(oo, { children: /* @__PURE__ */ ke(so, { children: [
-    "This is a trial version of the product. To purchase a license, go to ",
+    "Do Not",
     /* @__PURE__ */ h(
       "a",
       {
@@ -1392,7 +1392,7 @@ const no = () => {
     )
   ] }) }) });
 }, oo = $.div`
-  display: none;
+  display: flex;
   position: relative;
   background-color: #72c7ff30;
   border-radius: 6px;
