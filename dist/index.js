@@ -1,28 +1,28 @@
 var Yr = Object.defineProperty;
 var Qr = (r, e, t) => e in r ? Yr(r, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : r[e] = t;
-var a = (r, e, t) => (Qr(r, typeof e != "symbol" ? e + "" : e, t), t), Qe = (r, e, t) => {
+var a = (r, e, t) => (Qr(r, typeof e != "symbol" ? e + "" : e, t), t), Xe = (r, e, t) => {
   if (!e.has(r))
     throw TypeError("Cannot " + t);
 };
-var u = (r, e, t) => (Qe(r, e, "read from private field"), t ? t.call(r) : e.get(r)), y = (r, e, t) => {
+var u = (r, e, t) => (Xe(r, e, "read from private field"), t ? t.call(r) : e.get(r)), y = (r, e, t) => {
   if (e.has(r))
     throw TypeError("Cannot add the same private member more than once");
   e instanceof WeakSet ? e.add(r) : e.set(r, t);
-}, F = (r, e, t, n) => (Qe(r, e, "write to private field"), n ? n.call(r, t) : e.set(r, t), t);
-var b = (r, e, t) => (Qe(r, e, "access private method"), t);
-import { jsx as h, jsxs as ke, Fragment as pt } from "@emotion/react/jsx-runtime";
-import { cx as ft, css as rr } from "@emotion/css";
-import $ from "@emotion/styled";
-import { observer as nr } from "mobx-react";
-import { assign as J, clone as Ge, startCase as or, isEmpty as Ft, isArray as Gr, merge as At, reduce as Xr, isUndefined as _r, keysIn as en, forIn as tn, isObject as xt, upperFirst as rn } from "lodash-es";
-import { makeAutoObservable as W, reaction as nn, makeObservable as sr, observable as O, autorun as Ot, untracked as on, configure as sn } from "mobx";
-import { createContext as an, useContext as ir, useRef as fe, useState as mt, useEffect as E, useCallback as K, useMemo as ae, createElement as ar, Fragment as cn } from "react";
-import { CacheProvider as ln } from "@emotion/react";
-import Nt from "@emotion/cache";
-import un from "stylis-plugin-rtl";
-import { filter as he, Subject as cr, debounceTime as dn, map as zt, switchMap as hn, concatMap as pn, catchError as fn } from "rxjs";
-import { FluentResource as lr, FluentBundle as ur } from "@fluent/bundle";
-import { z as q } from "zod";
+}, x = (r, e, t, n) => (Xe(r, e, "write to private field"), n ? n.call(r, t) : e.set(r, t), t);
+var b = (r, e, t) => (Xe(r, e, "access private method"), t);
+import { jsx as h, jsxs as De, Fragment as vt } from "@emotion/react/jsx-runtime";
+import { cx as wt, css as nr } from "@emotion/css";
+import R from "@emotion/styled";
+import { observer as or } from "mobx-react";
+import { assign as Y, clone as _e, startCase as sr, isEmpty as Nt, isArray as Gr, merge as jt, reduce as Xr, isUndefined as _r, keysIn as en, forIn as tn, isObject as zt, upperFirst as rn } from "lodash-es";
+import { makeAutoObservable as U, reaction as nn, makeObservable as ir, observable as T, autorun as Mt, untracked as on, configure as sn } from "mobx";
+import { createContext as an, useContext as ar, useRef as me, useState as bt, useEffect as k, useCallback as K, useMemo as ae, createElement as cr, Fragment as cn, useImperativeHandle as ln } from "react";
+import { CacheProvider as un } from "@emotion/react";
+import $t from "@emotion/cache";
+import dn from "stylis-plugin-rtl";
+import { filter as pe, Subject as lr, debounceTime as hn, map as lt, switchMap as pn, catchError as fn } from "rxjs";
+import { FluentResource as ur, FluentBundle as dr } from "@fluent/bundle";
+import { z as H } from "zod";
 const ui = () => (Math.random() * 1e18).toString(36).slice(0, 5).toUpperCase() + "";
 function mn(r, e) {
   return r.reduce((t, n, o, s) => {
@@ -30,8 +30,8 @@ function mn(r, e) {
     return (t[i = e(n, o, s)] || (t[i] = [])).push(n), t;
   }, {});
 }
-var ge;
-class Y {
+var ye;
+class J {
   /**
    * Creates component metadata for the form viewer.
    * @param component the React component.
@@ -48,18 +48,18 @@ class Y {
    * @template T the type of React component properties.
    */
   constructor(e, t, n, o, s, i, c, l, d, p, g = "component") {
-    y(this, ge, void 0);
+    y(this, ye, void 0);
     /**
      * The React component.
      */
     a(this, "component");
-    this.actionsInitializer = n, this.valued = o, this.valueType = s, this.defaultProps = i, this.css = c, this.wrapperCss = l, this.typeName = d, this.icon = p, this.kind = g, this.component = nr(e), this.component.displayName = e.displayName || e.name, F(this, ge, t);
+    this.actionsInitializer = n, this.valued = o, this.valueType = s, this.defaultProps = i, this.css = c, this.wrapperCss = l, this.typeName = d, this.icon = p, this.kind = g, this.component = or(e), this.component.displayName = e.displayName || e.name, x(this, ye, t);
   }
   /**
    * @returns the component name, or type if there is no component name.
    */
   get name() {
-    return u(this, ge) ?? this.type;
+    return u(this, ye) ?? this.type;
   }
   /**
    * @returns the component type name.
@@ -68,9 +68,9 @@ class Y {
     return this.typeName || this.component.displayName || this.component.name;
   }
 }
-ge = new WeakMap();
-var Z = /* @__PURE__ */ ((r) => (r.LTR = "ltr", r.RTL = "rtl", r))(Z || {});
-class De {
+ye = new WeakMap();
+var Q = /* @__PURE__ */ ((r) => (r.LTR = "ltr", r.RTL = "rtl", r))(Q || {});
+class Fe {
   /**
    * Creates metadata for a React component property.
    * @param key the property name.
@@ -143,13 +143,13 @@ class De {
     return Object.create(Object.getPrototypeOf(this), Object.getOwnPropertyDescriptors(this));
   }
 }
-class dr extends De {
+class hr extends Fe {
 }
-class gn extends De {
+class gn extends Fe {
 }
-class yn extends De {
+class yn extends Fe {
 }
-class hr extends De {
+class pr extends Fe {
   constructor() {
     super(...arguments);
     /**
@@ -158,12 +158,12 @@ class hr extends De {
     a(this, "data");
   }
 }
-const di = (r) => r instanceof hr;
-class vn extends De {
+const di = (r) => r instanceof pr;
+class vn extends Fe {
 }
 const wn = {
-  Property: hr,
-  Container: dr,
+  Property: pr,
+  Container: hr,
   Event: gn,
   Module: yn,
   Style: vn
@@ -180,7 +180,7 @@ class bn {
     a(this, "autoName", !0);
   }
 }
-class pr {
+class fr {
   constructor() {
     /**
      * Partial metadata for a component property.
@@ -240,15 +240,15 @@ class pr {
    */
   setup(e) {
     const { annotationType: t, autoName: n, ...o } = e, s = this.clone();
-    return s.options.annotationType = t ?? s.options.annotationType, s.options.autoName = n ?? s.options.autoName, J(s.annotation, o), s;
+    return s.options.annotationType = t ?? s.options.annotationType, s.options.autoName = n ?? s.options.autoName, Y(s.annotation, o), s;
   }
   /**
    * Clones the instance of the builder.
    * @returns the cloned instance of the builder.
    */
   clone() {
-    const e = Ge(this);
-    return e.options = Ge(this.options), e.annotation = Ge(this.annotation), e.annotation ?? (e.annotation = {}), e;
+    const e = _e(this);
+    return e.options = _e(this.options), e.annotation = _e(this.annotation), e.annotation ?? (e.annotation = {}), e;
   }
   /**
    * Creates component property metadata for the form builder.
@@ -257,7 +257,7 @@ class pr {
    */
   build(e) {
     const t = this.getName(e), n = new wn[this.options.annotationType](e, t);
-    return J(n, this.annotation), n;
+    return Y(n, this.annotation), n;
   }
   /**
    * Sets custom properties for the component's property editor.
@@ -266,7 +266,7 @@ class pr {
    */
   withEditorProps(e) {
     const t = this.clone();
-    return J(t.annotation, { editorProps: e }), t;
+    return Y(t.annotation, { editorProps: e }), t;
   }
   /**
    * Returns the annotation name.
@@ -274,10 +274,10 @@ class pr {
    * @returns the annotation name.
    */
   getName(e) {
-    return this.annotation.name ?? (this.options.autoName ? or(e) : e);
+    return this.annotation.name ?? (this.options.autoName ? sr(e) : e);
   }
 }
-class gt extends pr {
+class Ct extends fr {
   /**
    * Marks the component property as required.
    * @returns the modified instance of the builder.
@@ -303,7 +303,7 @@ class gt extends pr {
     return this.setup({ validator: e, errorMap: t });
   }
 }
-class je extends gt {
+class $e extends Ct {
   constructor() {
     super(...arguments);
     a(this, "subType");
@@ -313,7 +313,7 @@ class je extends gt {
    * @returns the modified instance of the builder.
    */
   get ofString() {
-    const t = new je().setup({ ...this.options, ...this.annotation, type: "array", editor: "arrayOfString" });
+    const t = new $e().setup({ ...this.options, ...this.annotation, type: "array", editor: "arrayOfString" });
     return t.subType = "string", t;
   }
   /**
@@ -321,11 +321,11 @@ class je extends gt {
    * @returns the modified instance of the builder.
    */
   get ofObject() {
-    const t = new je().setup({ ...this.options, ...this.annotation, type: "array" });
+    const t = new $e().setup({ ...this.options, ...this.annotation, type: "array" });
     return t.subType = "object", t;
   }
 }
-class fr extends gt {
+class mr extends Ct {
   constructor() {
     super(...arguments);
     /**
@@ -362,7 +362,7 @@ class fr extends gt {
     const n = super.build(t);
     return n.data = this.values.map((o, s) => {
       var c;
-      return { label: ((c = this.labels) == null ? void 0 : c[s]) ?? or(o.toString()), value: o };
+      return { label: ((c = this.labels) == null ? void 0 : c[s]) ?? sr(o.toString()), value: o };
     }), n;
   }
   /**
@@ -374,7 +374,7 @@ class fr extends gt {
     return this.setup({ default: t });
   }
 }
-class Cn extends fr {
+class Cn extends mr {
   /**
    * Sets the radio buttons as the component's property editor.
    * @returns the modified instance of the builder.
@@ -391,7 +391,7 @@ class Cn extends fr {
     return super.default(e);
   }
 }
-class Sn extends fr {
+class Sn extends mr {
   /**
    * Sets the default value for the component property.
    * @param value the default value.
@@ -401,7 +401,7 @@ class Sn extends fr {
     return super.default(e);
   }
 }
-const Ke = class Ke extends pr {
+const He = class He extends fr {
   /**
    * Creates a component property metadata builder.
    * @param editor the property editor type.
@@ -415,7 +415,7 @@ const Ke = class Ke extends pr {
    * @returns the instance of the metadata property builder.
    */
   get array() {
-    return new je().setup({ ...this.options, ...this.annotation, type: "array" });
+    return new $e().setup({ ...this.options, ...this.annotation, type: "array" });
   }
   /**
    * Sets the field type for the component property.
@@ -423,7 +423,7 @@ const Ke = class Ke extends pr {
    * @returns the instance of the metadata property builder.
    */
   typed(e) {
-    return new gt().setup({ ...this.options, ...this.annotation, type: e });
+    return new Ct().setup({ ...this.options, ...this.annotation, type: e });
   }
   /**
    * Sets the property as a "single select" property.
@@ -450,23 +450,23 @@ const Ke = class Ke extends pr {
  * @template T the property type.
  * @returns the component property metadata builder.
  */
-a(Ke, "create", (e) => new Ke(e));
-let Me = Ke;
-const hi = (r) => r instanceof dr, j = Me.create;
-function k(r) {
-  return j(r).setup({ annotationType: "Property" });
+a(He, "create", (e) => new He(e));
+let Re = He;
+const hi = (r) => r instanceof hr, z = Re.create;
+function D(r) {
+  return z(r).setup({ annotationType: "Property" });
 }
-function mr(r) {
+function gr(r) {
   return r.reduce((e, t) => (e[t.key] = t.default, e), {});
 }
-function Re(r) {
+function Le(r) {
   return {
     any: {
-      object: mr(r)
+      object: gr(r)
     }
   };
 }
-class En extends Me {
+class Pn extends Re {
   /**
    * Creates a component property metadata builder.
    * @param editor the property editor type.
@@ -484,23 +484,23 @@ class En extends Me {
     return this.setup({ slotConditionBuilder: e });
   }
 }
-function Pn(r) {
-  return new En(r);
+function En(r) {
+  return new Pn(r);
 }
-const Tn = (r, e) => e.reduceScreen((t, n) => n.key === r ? t + 1 : t, 0) === 1, pi = j("key").typed("string").required.hinted("Unique component key").calculable(!1).validated(Tn, { code: "unique_key", message: "The key must be unique!" }).build("key"), Vn = j("htmlAttributes"), kn = j("validation"), gr = k("string").typed("string").localize, Dn = k("boolean").typed("boolean"), fi = k("number").typed("number"), Fn = k("size").typed("string"), mi = k("date").typed("date"), gi = k("array").array, yi = k("color").typed("string"), vi = j("tooltipType").typed("string"), _ = j("size").setup({ calculable: !1 }), jt = j("color").setup({ calculable: !1 }), wi = k("string").calculable(!0).build("className"), Mt = j("event").setup({ annotationType: "Event" }), An = Pn("node").setup({ annotationType: "Container" }), Oe = k("oneOf").oneOf.bind(k("oneOf")), bi = k("someOf").someOf.bind(k("someOf")), xn = j("tooltipProps"), On = j("renderWhen").typed("boolean"), Je = {
+const Tn = (r, e) => e.reduceScreen((t, n) => n.key === r ? t + 1 : t, 0) === 1, pi = z("key").typed("string").required.hinted("Unique component key").calculable(!1).validated(Tn, { code: "unique_key", message: "The key must be unique!" }).build("key"), Vn = z("htmlAttributes"), kn = z("validation"), yr = D("string").typed("string").localize, Dn = D("boolean").typed("boolean"), fi = D("number").typed("number"), Fn = D("size").typed("string"), mi = D("date").typed("date"), gi = D("array").array, yi = D("color").typed("string"), vi = z("tooltipType").typed("string"), _ = z("size").setup({ calculable: !1 }), Rt = z("color").setup({ calculable: !1 }), wi = D("string").calculable(!0).build("className"), Lt = z("event").setup({ annotationType: "Event" }), xn = En("node").setup({ annotationType: "Container" }), ze = D("oneOf").oneOf.bind(D("oneOf")), bi = D("someOf").someOf.bind(D("someOf")), An = z("tooltipProps"), On = z("renderWhen").typed("boolean"), Ze = {
   width: _.setup({ default: "100%" }),
   height: _,
   marginTop: _,
   marginRight: _,
   marginBottom: _,
   marginLeft: _,
-  color: jt,
-  backgroundColor: jt
-}, yr = {
-  flexDirection: Oe("column", "row", "column-reverse", "row-reverse"),
+  color: Rt,
+  backgroundColor: Rt
+}, vr = {
+  flexDirection: ze("column", "row", "column-reverse", "row-reverse"),
   gap: Fn,
-  alignItems: Oe("start", "center", "baseline", "end", "stretch"),
-  justifyContent: Oe(
+  alignItems: ze("start", "center", "baseline", "end", "stretch"),
+  justifyContent: ze(
     "flex-start",
     "flex-end",
     "center",
@@ -512,8 +512,8 @@ const Tn = (r, e) => e.reduceScreen((t, n) => n.key === r ? t + 1 : t, 0) === 1,
     "left",
     "right"
   ),
-  flexWrap: Oe("wrap", "nowrap", "wrap-reverse")
-}, vr = (async function() {
+  flexWrap: ze("wrap", "nowrap", "wrap-reverse")
+}, G = (async function() {
 }).constructor;
 class V {
   /**
@@ -541,7 +541,7 @@ class V {
    * @returns the new instance of the ActionDefinition class.
    */
   static sourceAction(e, t = {}) {
-    const n = vr("e, args", e);
+    const n = G("e, args", e);
     return new V(n, e, t);
   }
   /**
@@ -559,8 +559,8 @@ const Nn = (r) => {
     const n = r[t];
     e[t] = V.createFromObject(n);
   }), e;
-}, yt = "onDidMount", vt = "onWillUnmount";
-function zn(r) {
+}, St = "onDidMount", Pt = "onWillUnmount";
+function jn(r) {
   return new Proxy(r, {
     get(e, t) {
       return t === "toJSON" ? () => e.data : e.data[t];
@@ -571,8 +571,8 @@ function zn(r) {
     }
   });
 }
-var ye, ve, We;
-class st {
+var ve, we, Ue;
+class ut {
   /**
    * Creates arguments for the event handler.
    * @param type the event type.
@@ -582,7 +582,7 @@ class st {
    * @param state the {@link ComponentState} instance.
    */
   constructor(e, t, n, o, s) {
-    y(this, ye, void 0);
+    y(this, ve, void 0);
     /**
      * The component properties that were used to render the sender component.
      */
@@ -594,30 +594,30 @@ class st {
     a(this, "setUserDefinedProps", (e) => {
       this.sender.userDefinedProps = e;
     });
-    y(this, ve, (e) => !!(e && e.target && e.type && e.preventDefault));
-    y(this, We, (e) => !u(this, ve).call(this, e));
-    this.type = e, this.sender = t, this.store = n, this.args = o, this.renderedProps = s.get, F(this, ye, zn(this.store.formData));
+    y(this, we, (e) => !!(e && e.target && e.type && e.preventDefault));
+    y(this, Ue, (e) => !u(this, we).call(this, e));
+    this.type = e, this.sender = t, this.store = n, this.args = o, this.renderedProps = s.get, x(this, ve, jn(this.store.formData));
   }
   /**
    * @returns the event handled by the event handler.
    */
   get event() {
-    return this.args.find(u(this, ve));
+    return this.args.find(u(this, we));
   }
   /**
    * @returns the first element of the event argument array, which is treated as a value.
    */
   get value() {
-    return this.args.filter((e) => typeof e < "u").find(u(this, We));
+    return this.args.filter((e) => typeof e < "u").find(u(this, Ue));
   }
   /**
    * @returns the object for reading and changing form data.
    */
   get data() {
-    return u(this, ye);
+    return u(this, ve);
   }
 }
-ye = new WeakMap(), ve = new WeakMap(), We = new WeakMap();
+ve = new WeakMap(), we = new WeakMap(), Ue = new WeakMap();
 const Ci = `
 /**
  * Arguments passed to the event handler.
@@ -669,13 +669,13 @@ declare class ActionEventArgs {
    */
   get data(): Record<string, unknown>
 }
-`, qe = [
-  xn.build("tooltipProps"),
+`, Ye = [
+  An.build("tooltipProps"),
   On.build("renderWhen"),
   Vn.build("htmlAttributes"),
   kn.build("validation"),
-  Mt.build(yt),
-  Mt.build(vt)
+  Lt.build(St),
+  Lt.build(Pt)
 ];
 class ce {
   /**
@@ -693,8 +693,8 @@ class ce {
     this.type = e, this.properties = t, this.css = n, this.wrapperCss = o, this.modules = s, this.customPreview = i, this.valuedAn = c, this.kind = l;
   }
 }
-const Rt = Symbol("key");
-function $t(r, e, t = {}) {
+const It = Symbol("key");
+function Wt(r, e, t = {}) {
   return wr("autorun", r, e, t);
 }
 function L(r, e = {}) {
@@ -704,22 +704,22 @@ function wr(r, e, t, n = {}) {
   const o = Object.keys(n).map((s) => `${s}=${n[s]}`).join("_");
   return `${r}_${e}_${t ? `${t}_` : ""}${o}`;
 }
-let Lt = 0;
+let Bt = 0;
 function br(r) {
-  r[Rt] || (++Lt, r[Rt] = `actionData_${Lt}`);
+  r[It] || (++Bt, r[It] = `actionData_${Bt}`);
 }
 function Cr(r) {
   var t;
   const e = r.events;
   e && Object.values(e).forEach((n) => n.forEach(br)), (t = r.children) == null || t.forEach(Cr);
 }
-function Ze(r) {
+function Qe(r) {
   return (r == null ? void 0 : r.computeType) === "function";
 }
 function Sr(r) {
   return (r == null ? void 0 : r.computeType) === "localization";
 }
-class R {
+class $ {
   /**
    * Creates the component settings.
    * @param key the React component key.
@@ -778,7 +778,7 @@ class R {
      * The expression or function to conditionally render a component.
      */
     a(this, "renderWhen");
-    this.key = e, this.type = t, W(this, void 0, { name: L("ComponentStore", { key: e }) });
+    this.key = e, this.type = t, U(this, void 0, { name: L("ComponentStore", { key: e }) });
   }
   /**
    * Correctly creates the {@link ComponentStore} from deserialized data.
@@ -786,7 +786,7 @@ class R {
    * @returns the component Store.
    */
   static createFromObject(e) {
-    const t = J(new R(e.key, e.type), e);
+    const t = Y(new $(e.key, e.type), e);
     return Cr(t), t;
   }
   /**
@@ -800,46 +800,46 @@ class R {
     br(n), e.events ?? (e.events = {}), (o = e.events)[t] ?? (o[t] = []), e.events[t].push(n);
   }
 }
-function jn(r) {
+function zn(r) {
   return typeof r == "string";
 }
 function Mn(r) {
   return typeof r == "number";
 }
-function wt(r) {
+function Et(r) {
   return typeof r == "object" && typeof r.then == "function";
 }
-function Rn(r) {
+function $n(r) {
   return typeof r == "object";
 }
 function P(r, e) {
-  const t = nr(e);
+  const t = or(e);
   return t.displayName = r, t;
 }
-const Si = new R("", ""), C = (r) => r.replace(new RegExp(" ", "g"), "_"), $n = (r) => typeof r == "string" || typeof r == "number" || r instanceof Date ? !0 : typeof (r == null ? void 0 : r.value) < "u", Ln = (r) => {
+const Si = new $("", ""), C = (r) => r.replace(new RegExp(" ", "g"), "_"), Rn = (r) => typeof r == "string" || typeof r == "number" || r instanceof Date ? !0 : typeof (r == null ? void 0 : r.value) < "u", Ln = (r) => {
   const e = {};
   for (const [t, n] of Object.entries(r))
-    $n(n) && (e[C(t)] = n);
+    Rn(n) && (e[C(t)] = n);
   return e;
 };
-function Fe(r) {
+function xe(r) {
   const e = an(null);
   e.displayName = r;
-  const t = In(e), n = Bn(e);
+  const t = In(e), n = Wn(e);
   return [t, n, e];
 }
 function In(r) {
   return () => {
-    const e = ir(r);
+    const e = ar(r);
     if (!e)
       throw new Error(`The context ${r.displayName} didn't found!`);
     return e;
   };
 }
-function Bn(r) {
+function Wn(r) {
   return r.Provider;
 }
-class It {
+class Kt {
   constructor() {
     a(this, "handlers", []);
   }
@@ -879,27 +879,27 @@ class It {
     this.handlers = [];
   }
 }
-function it(r, e) {
+function dt(r, e) {
   var t;
-  e(r), (t = r.children) == null || t.forEach((n) => it(n, e));
+  e(r), (t = r.children) == null || t.forEach((n) => dt(n, e));
 }
-function Kn(r, e, t = 0) {
+function Bn(r, e, t = 0) {
   if (r === e)
     return t;
   if (r.children) {
     t = t + 1;
     for (const n of r.children) {
-      const o = Kn(n, e, t);
+      const o = Bn(n, e, t);
       if (o)
         return o;
     }
   }
 }
-let Wn = 0;
-function Un(r) {
-  return `${r}_${++Wn}`;
+let Kn = 0;
+function Hn(r) {
+  return `${r}_${++Kn}`;
 }
-class Hn {
+class Un {
   /**
    * Constructs a new instance of the ComponentKeyChangedEventArgs class.
    * @param oldKey the old key.
@@ -914,11 +914,11 @@ class Jn {
     /**
      * An event that occurs after a component key change.
      */
-    a(this, "onAfterKeyChanged", new It());
+    a(this, "onAfterKeyChanged", new Kt());
     /**
      * An event that occurs before a component is removed from the component tree.
      */
-    a(this, "onBeforeDelete", new It());
+    a(this, "onBeforeDelete", new Kt());
   }
   /**
    * Unsubscribe from all events.
@@ -927,7 +927,7 @@ class Jn {
     this.onAfterKeyChanged.dispose(), this.onBeforeDelete.dispose();
   }
 }
-var we, A, I;
+var be, A, W;
 class qn {
   /**
    * Constructor.
@@ -938,9 +938,9 @@ class qn {
    * @param formValidators the array of functions that validate the form data.
    */
   constructor(e, t, n, o, s) {
-    y(this, we, void 0);
+    y(this, be, void 0);
     y(this, A, void 0);
-    y(this, I, void 0);
+    y(this, W, void 0);
     a(this, "_state", {});
     /**
      * The unique identifier.
@@ -975,10 +975,10 @@ class qn {
      */
     a(this, "validating", !1);
     var c;
-    this.store = e, this.model = t, this.field = n, this.id = Un(this.model.type), F(this, I, s), (c = e.children) == null || c.forEach((l) => {
+    this.store = e, this.model = t, this.field = n, this.id = Hn(this.model.type), x(this, W, s), (c = e.children) == null || c.forEach((l) => {
       o(l).setParent(this);
-    }), W(this, void 0, { name: L("ComponentData", { key: e.key }) }), F(this, we, [(() => nn(() => this.key, (l, d) => {
-      this.invokeOnAfterKeyChanged(this, new Hn(d, l));
+    }), U(this, void 0, { name: L("ComponentData", { key: e.key }) }), x(this, be, [(() => nn(() => this.key, (l, d) => {
+      this.invokeOnAfterKeyChanged(this, new Un(d, l));
     }))()]);
   }
   /**
@@ -1019,7 +1019,7 @@ class qn {
    * @returns the ComponentDataEvents object.
    */
   get events() {
-    return u(this, A) || F(this, A, new Jn()), u(this, A);
+    return u(this, A) || x(this, A, new Jn()), u(this, A);
   }
   /**
    * Find the node with the given key.
@@ -1042,9 +1042,9 @@ class qn {
    */
   unifyKeys(e) {
     const t = /* @__PURE__ */ new Map(), n = [];
-    return it(e, ({ key: o }) => {
+    return dt(e, ({ key: o }) => {
       n.push(o);
-    }), it(this, (o) => {
+    }), dt(this, (o) => {
       let s = 1;
       const i = () => `${o.store.type} ${s}`;
       for (; n.includes(i()); )
@@ -1119,9 +1119,9 @@ class qn {
   async validate() {
     this.validating = !0;
     try {
-      if (await Promise.allSettled([...this.fields.values()].map((o) => o.validate())), !u(this, I))
+      if (await Promise.allSettled([...this.fields.values()].map((o) => o.validate())), !u(this, W))
         return;
-      const e = this.fields, t = u(this, I).map((o) => o(this.data));
+      const e = this.fields, t = u(this, W).map((o) => o(this.data));
       (await Promise.allSettled(t)).map((o) => {
         if (o.status === "rejected") {
           console.error(o.reason);
@@ -1147,7 +1147,7 @@ class qn {
     let e;
     const t = async ([s, i]) => {
       const c = await i.getValidationResult();
-      if (Ft(c))
+      if (Nt(c))
         return;
       e ?? (e = {});
       let l = e;
@@ -1155,15 +1155,15 @@ class qn {
         const d = Gr(c) ? [] : {};
         e[s] ?? (e[s] = d), l = e[s];
       }
-      At(l, c);
+      jt(l, c);
     }, n = [...this.fields.entries()];
-    if (await Promise.allSettled(n.map(t)), !u(this, I))
+    if (await Promise.allSettled(n.map(t)), !u(this, W))
       return e;
     const o = async (s) => {
       const i = await s(this.data);
-      Ft(i) || (e ?? (e = {}), At(e, i));
+      Nt(i) || (e ?? (e = {}), jt(e, i));
     };
-    return await Promise.allSettled(u(this, I).map(o)), e;
+    return await Promise.allSettled(u(this, W).map(o)), e;
   }
   /**
    * @inheritDoc
@@ -1220,7 +1220,7 @@ class qn {
   disposeNodes(e) {
     e.forEach((t) => {
       var n, o;
-      (n = u(t, A)) == null || n.dispose(), u(t, we).forEach((s) => s()), (o = t.field) == null || o.dispose(), t.parent = void 0, t.children = [];
+      (n = u(t, A)) == null || n.dispose(), u(t, be).forEach((s) => s()), (o = t.field) == null || o.dispose(), t.parent = void 0, t.children = [];
     });
   }
   collectAllNodesAsArray(e) {
@@ -1258,7 +1258,7 @@ class qn {
     }), (n = this.parent) == null || n.invokeOnBeforeDeleted(e);
   }
 }
-we = new WeakMap(), A = new WeakMap(), I = new WeakMap();
+be = new WeakMap(), A = new WeakMap(), W = new WeakMap();
 const Zn = (r) => {
   const e = {};
   return r.fields.forEach((t, n) => {
@@ -1268,46 +1268,46 @@ const Zn = (r) => {
   /**
    * @returns the instance of the ComponentData of the currently rendered component.
    */
-  Q,
+  X,
   /**
    * Context provider for the useComponentData hook. **Internal use only.**
    */
-  Er
-] = Fe("ComponentDataContext"), [
+  Pr
+] = xe("ComponentDataContext"), [
   /**
    * **Internal use only.**
    */
-  D,
+  F,
   /**
    * **Internal use only.**
    */
-  bt,
+  Tt,
   /**
    * **Internal use only.**
    */
   Yn
-] = Fe("StoreContext"), [
+] = xe("StoreContext"), [
   /**
    * **Internal use only.**
    */
-  G,
+  q,
   /**
    * **Internal use only.**
    */
-  Pr
-] = Fe("FormViewerPropsContext");
+  Er
+] = xe("FormViewerPropsContext");
 function Ae(r, e = {}) {
   return Xr(r, (t, n, o) => {
     var s;
-    return t.push(((s = n == null ? void 0 : n.setup(e)) == null ? void 0 : s.build(o)) ?? gr.setup(e).build(o)), t;
+    return t.push(((s = n == null ? void 0 : n.setup(e)) == null ? void 0 : s.build(o)) ?? yr.setup(e).build(o)), t;
   }, []);
 }
-function $e(r) {
+function Ie(r) {
   return Ae(r, { annotationType: "Style", calculable: !1 });
 }
 function Qn(r) {
-  const e = fe(!1), [t, n] = mt(r);
-  E(() => (e.current = !0, () => {
+  const e = me(!1), [t, n] = bt(r);
+  k(() => (e.current = !0, () => {
     e.current = !1;
   }), []);
   const o = K((s) => {
@@ -1315,7 +1315,7 @@ function Qn(r) {
   }, []);
   return ae(() => [t, o], [t, o]);
 }
-const Gn = /* @__PURE__ */ new Date(1718296034243), Bt = ":", Kt = "-", Xn = `MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEJDKWHzXT9YZw7WDJy4wr/VMXBf+/afNB
+const Gn = /* @__PURE__ */ new Date(1718971010758), Ht = ":", Ut = "-", Xn = `MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEJDKWHzXT9YZw7WDJy4wr/VMXBf+/afNB
   ppCLv1zZFVUQEmDRPhGC5nKux3WQcrtfl18iNFfISjcqN5vplR/kcAvIJd07tacn
   y1l39NGbMLIoPVzPY6GXTNzQpxRbGn99`;
 function Tr(r) {
@@ -1363,27 +1363,26 @@ function to(r, e) {
 async function ro(r) {
   if (r)
     try {
-      let e = r.indexOf(Kt);
+      let e = r.indexOf(Ut);
       if (e === -1)
         return !1;
-      const t = r.slice(0, e), n = r.slice(e + Kt.length);
-      if (e = n.indexOf(Bt), e === -1)
+      const t = r.slice(0, e), n = r.slice(e + Ut.length);
+      if (e = n.indexOf(Ht), e === -1)
         return !1;
-      const o = window.atob(n.slice(0, e)), s = Tr(n.slice(e + Bt.length));
+      const o = window.atob(n.slice(0, e)), s = Tr(n.slice(e + Ht.length));
       return await eo(o, s, Xn) ? to(t, o) : !1;
     } catch {
       return !1;
     }
 }
 const no = () => {
-  const { licenseKey: r } = G(), [e, t] = Qn(!0);
-  return E(() => {
+  const { licenseKey: r } = q(), [e, t] = Qn(!0);
+  return k(() => {
     ro(r).then((n) => {
       t(!!n);
     });
-  }, [r, t]), /* @__PURE__ */ h("div", { 
-    style: { display: 'none'} ,children: !e && /* @__PURE__ */ h(oo, { children: /* @__PURE__ */ ke(so, { children: [
-    "Do Not",
+  }, [r, t]), /* @__PURE__ */ h("div", { style: { display: 'none'}, children: !e && /* @__PURE__ */ h(oo, { children: /* @__PURE__ */ De(so, { children: [
+    "This is a trial version of the product. To purchase a license, go to ",
     /* @__PURE__ */ h(
       "a",
       {
@@ -1392,40 +1391,40 @@ const no = () => {
       }
     )
   ] }) }) });
-}, oo = $.div`
+}, oo = R.div`
   display: flex;
   position: relative;
   background-color: #72c7ff30;
   border-radius: 6px;
   padding: 10px;
   gap: 10px;
-`, so = $.label`
+`, so = R.label`
   flex: 1;
-`, Wt = {
-  LTR: Nt({
-    key: Z.LTR
+`, Jt = {
+  LTR: $t({
+    key: Q.LTR
   }),
-  RTL: Nt({
-    key: Z.RTL,
-    stylisPlugins: [un],
+  RTL: $t({
+    key: Q.RTL,
+    stylisPlugins: [dn],
     prepend: !0
   })
 }, io = "optimajet-formviewer", ao = (r) => {
-  const e = D(), t = r.language ?? e.displayedLanguage;
-  E(() => {
+  const e = F(), t = r.language ?? e.displayedLanguage;
+  k(() => {
     e.formViewerPropsStore.view.getCssLoaders(t.bidi).forEach((s) => {
       s().catch((i) => console.error(i));
     });
   }, [t, e.formViewerPropsStore.view]);
-  const n = t.bidi == Z.RTL ? Wt.RTL : Wt.LTR;
-  return /* @__PURE__ */ h(lo, { dir: t.bidi, lang: t.fullCode, className: io, children: /* @__PURE__ */ h(ln, { value: n, children: Vr(e.formViewerPropsStore.view.viewerWrappers, t, r.children) }) });
-}, co = P("ViewerLocalizationProvider", ao), lo = $.div`
+  const n = t.bidi == Q.RTL ? Jt.RTL : Jt.LTR;
+  return /* @__PURE__ */ h(lo, { dir: t.bidi, lang: t.fullCode, className: io, children: /* @__PURE__ */ h(un, { value: n, children: Vr(e.formViewerPropsStore.view.viewerWrappers, t, r.children) }) });
+}, co = P("ViewerLocalizationProvider", ao), lo = R.div`
   display: flex;
   width: 100%;
   height: 100%;
 `, Vr = ([r, ...e], t, n) => r ? /* @__PURE__ */ h(r, { language: t, children: Vr(e, t, n) }) : n, uo = ({ children: r }) => {
-  const [e] = mt(window.onerror);
-  return E(() => (window.onerror = (t) => {
+  const [e] = bt(window.onerror);
+  return k(() => (window.onerror = (t) => {
     if ((t == null ? void 0 : t.toString().search("ResizeObserver")) !== -1) {
       const n = document.getElementById(
         "webpack-dev-server-client-overlay-div"
@@ -1437,9 +1436,9 @@ const no = () => {
     return !1;
   }, () => {
     window.onerror = e;
-  }), [e]), /* @__PURE__ */ h(pt, { children: r });
+  }), [e]), /* @__PURE__ */ h(vt, { children: r });
 };
-class pe {
+class fe {
   /**
    * Creates the event stream of the form viewer.
    * @param stream the set of observable events.
@@ -1453,8 +1452,8 @@ class pe {
    * @returns the event stream filtered by the specified predicate function.
    */
   filter(e) {
-    const t = this.stream.pipe(he(e));
-    return new pe(t);
+    const t = this.stream.pipe(pe(e));
+    return new fe(t);
   }
   /**
    * Returns the event stream filtered by the specified sender keys.
@@ -1462,8 +1461,8 @@ class pe {
    * @returns the event stream filtered by the specified sender keys.
    */
   keys(...e) {
-    const t = this.stream.pipe(he((n) => e.includes(n.sender.key)));
-    return new pe(t);
+    const t = this.stream.pipe(pe((n) => e.includes(n.sender.key)));
+    return new fe(t);
   }
   /**
    * Returns the event stream filtered by the specified event types.
@@ -1471,8 +1470,8 @@ class pe {
    * @returns the event stream filtered by the specified event types.
    */
   types(...e) {
-    const t = this.stream.pipe(he((n) => e.includes(n.type)));
-    return new pe(t);
+    const t = this.stream.pipe(pe((n) => e.includes(n.type)));
+    return new fe(t);
   }
   /**
    * Adds the specified observer to the stream of observed events.
@@ -1493,8 +1492,8 @@ const [
    * **Internal use only.**
    */
   po
-] = Fe("ComponentTreeContext");
-class z {
+] = xe("ComponentTreeContext");
+class j {
   /**
    * Constructor.
    * @param error the error.
@@ -1510,7 +1509,7 @@ class z {
    * @returns the new instance of CalculableResult class.
    */
   static success(e) {
-    return new z(!1, e);
+    return new j(!1, e);
   }
   /**
    * Creates a new instance of CalculableResult class with an error.
@@ -1518,21 +1517,21 @@ class z {
    * @returns the new instance of CalculableResult class.
    */
   static error(e) {
-    return new z(!0, void 0, e);
+    return new j(!0, void 0, e);
   }
 }
-const Ut = /* @__PURE__ */ new Map(), fo = (r) => {
-  const e = Ut.get(r);
+const qt = /* @__PURE__ */ new Map(), fo = (r) => {
+  const e = qt.get(r);
   if (e)
     return e;
   const t = new Function("form", r);
-  return Ut.set(r, t), t;
+  return qt.set(r, t), t;
 }, kr = (r, e) => {
   try {
     const n = fo(r)(e);
-    return z.success(n);
+    return j.success(n);
   } catch (t) {
-    return z.error([
+    return j.error([
       t,
       {
         name: "Function source",
@@ -1540,9 +1539,9 @@ const Ut = /* @__PURE__ */ new Map(), fo = (r) => {
       }
     ]);
   }
-}, Ct = (r, e) => kr(r.fnSource || "", e), mo = (r, e) => {
-  if (Ze(r))
-    return Ct(r, e).result;
+}, Vt = (r, e) => kr(r.fnSource || "", e), mo = (r, e) => {
+  if (Qe(r))
+    return Vt(r, e).result;
   const t = r.value || "";
   return kr(`return ${t}`, e).result;
 }, go = (r, e) => {
@@ -1550,14 +1549,15 @@ const Ut = /* @__PURE__ */ new Map(), fo = (r) => {
   return Object.keys(r.props).forEach((n) => {
     const o = r.props[n];
     if (o) {
-      if (Ze(o)) {
-        const { result: s, error: i, exceptions: c } = Ct(o, e);
+      if (Qe(o)) {
+        const { result: s, error: i, exceptions: c } = Vt(o, e);
         if (i) {
           const l = `Error in the calculable field '${n}' of the '${r.key}' component `;
           console.warn(l, c);
           return;
         }
         t[n] = s;
+        return;
       }
       _r(o.value) || (t[n] = o.value);
     }
@@ -1577,7 +1577,7 @@ const Ut = /* @__PURE__ */ new Map(), fo = (r) => {
     var c, l;
     return (l = (c = r.store.events) == null ? void 0 : c[i]) == null ? void 0 : l.length;
   }, s = new Set(en(r.store.events).filter(o));
-  return s.add("onChange").add("onBlur"), s.delete(yt), s.delete(vt), s.forEach((i) => n[i] = (...c) => e.eventSubject.next(new st(i, r, e, c, t))), n;
+  return s.add("onChange").add("onBlur"), s.delete(St), s.delete(Pt), s.forEach((i) => n[i] = (...c) => e.eventSubject.next(new ut(i, r, e, c, t))), n;
 };
 class Dr {
   /**
@@ -1588,7 +1588,7 @@ class Dr {
    * @param computeChildren the function that calculates all child properties of a component.
    */
   constructor(e, t, n, o) {
-    this.data = e, this.store = t, this.localizer = n, this.computeChildren = o, W(this, void 0, { name: L("ComponentState", { key: e.key }) });
+    this.data = e, this.store = t, this.localizer = n, this.computeChildren = o, U(this, void 0, { name: L("ComponentState", { key: e.key }) });
   }
   /**
    * @returns combined in order of priority component properties.
@@ -1642,7 +1642,7 @@ class Dr {
    * @returns the Record that contains the className property for the component.
    */
   get className() {
-    return { className: ft(
+    return { className: wt(
       this.propsWithoutChildren.className,
       this.getClassNameFromCssPart("css")
     ) };
@@ -1669,22 +1669,22 @@ class Dr {
     return this.computeChildren(this.data, e);
   }
   getClassNameFromCssPart(e) {
-    var c, l, d, p, g, v, X, xe, le, U, ue, Dt;
-    const { model: t, store: n } = this.data, { viewMode: o } = this.store, s = J(
+    var c, l, d, p, g, w, Oe, Ne, je, le, Z, ue;
+    const { model: t, store: n } = this.data, { viewMode: o } = this.store, s = Y(
       {},
       (l = (c = t[e]) == null ? void 0 : c.any) == null ? void 0 : l.object,
       (p = (d = n[e]) == null ? void 0 : d.any) == null ? void 0 : p.object
-    ), i = J(
+    ), i = Y(
       {},
-      (v = (g = t[e]) == null ? void 0 : g[o]) == null ? void 0 : v.object,
-      (xe = (X = n[e]) == null ? void 0 : X[o]) == null ? void 0 : xe.object
+      (w = (g = t[e]) == null ? void 0 : g[o]) == null ? void 0 : w.object,
+      (Ne = (Oe = n[e]) == null ? void 0 : Oe[o]) == null ? void 0 : Ne.object
     );
-    return rr`
+    return nr`
       && {
         ${s}
         ${i}
-        ${(U = (le = n[e]) == null ? void 0 : le.any) == null ? void 0 : U.string}
-        ${(Dt = (ue = n[e]) == null ? void 0 : ue[o]) == null ? void 0 : Dt.string}
+        ${(le = (je = n[e]) == null ? void 0 : je.any) == null ? void 0 : le.string}
+        ${(ue = (Z = n[e]) == null ? void 0 : Z[o]) == null ? void 0 : ue.string}
       }
     `;
   }
@@ -1692,7 +1692,7 @@ class Dr {
 function Fr(r, e) {
   if (!r.renderWhen)
     return !0;
-  if (!Ze(r.renderWhen)) {
+  if (!Qe(r.renderWhen)) {
     const { value: t } = r.renderWhen;
     if (typeof t == "string" && t.trim() === "")
       return !0;
@@ -1703,18 +1703,18 @@ const wo = "children";
 function bo(r, e, t, n) {
   const o = r.children, s = t, i = {}, c = mn(o, (p) => p.store.slot || wo), l = (p) => So(p.store, n), d = (p) => Fr(p.store, e);
   for (const [p, g] of Object.entries(c)) {
-    const v = g.filter(l).filter(d);
-    v.length && (i[p] = /* @__PURE__ */ h(s, { data: v }));
+    const w = g.filter(l).filter(d);
+    w.length && (i[p] = /* @__PURE__ */ h(s, { data: w }));
   }
   return i;
 }
-const Ht = /* @__PURE__ */ new Map();
+const Zt = /* @__PURE__ */ new Map();
 function Co(r) {
-  const e = Ht.get(r);
+  const e = Zt.get(r);
   if (e)
     return e;
   const t = new Function("parentProps", r);
-  return Ht.set(r, t), t;
+  return Zt.set(r, t), t;
 }
 function So(r, e) {
   var o;
@@ -1728,66 +1728,69 @@ function So(r, e) {
     return console.warn(s), !1;
   }
 }
-const Eo = () => D().form.tooltipType, Ar = (r, e, t, n) => {
-  const o = D();
+const Po = () => F().form.tooltipType, xr = (r, e, t, n) => {
+  const o = F();
   return ae(
-    () => Po(o, r, e, t, n),
+    () => Eo(o, r, e, t, n),
     [o, r, e, t, n]
   );
-}, Po = (r, e, t, n, o) => {
-  const s = new R(e, t.type);
+}, Eo = (r, e, t, n, o) => {
+  const s = new $(e, t.type);
   s.props = n;
   const i = r.createComponentData(s, !1, t);
   return new Dr(i, r, o, () => ({}));
 };
 function To() {
-  const r = G(), e = Eo();
+  const r = q(), e = Po();
   if (e)
     return r.view.get(e);
 }
 const Vo = ({ children: r }) => {
   const e = To();
-  return e ? /* @__PURE__ */ h(Fo, { tooltipDefinition: e, children: r }) : /* @__PURE__ */ h(pt, { children: r });
+  return e ? /* @__PURE__ */ h(Fo, { tooltipDefinition: e, children: r }) : /* @__PURE__ */ h(vt, { children: r });
 }, ko = P("TooltipWrapper", Vo), Do = ({ tooltipDefinition: r, children: e }) => {
-  const t = D(), n = Q(), o = n.store, s = K((c) => t.localizeComponent("tooltip", c), [t]), i = Ar(n.key, r, o.tooltipProps, s);
-  return ar(r.component, i.get, e);
-}, Fo = P("ComponentTooltip", Do), Ao = () => {
-  const r = D(), e = r.form.errorType, t = r.formViewerPropsStore.view;
-  return ae(() => (e ? t.find(e) : ht) ?? ht, [e, t]);
-}, Jt = (r, e, t) => {
-  const { eventSubject: n } = D(), o = fe(t);
-  o.current = t, E(() => {
-    const s = n.pipe(he((i) => i.type === e && i.sender.key === r)).subscribe((i) => {
+  const t = F(), n = X(), o = n.store, s = K((c) => t.localizeComponent("tooltip", c), [t]), i = xr(n.key, r, o.tooltipProps, s);
+  return cr(r.component, i.get, e);
+}, Fo = P("ComponentTooltip", Do), xo = () => {
+  const r = F(), e = r.form.errorType, t = r.formViewerPropsStore.view, n = q();
+  return ae(() => {
+    const o = n.errorWrapper ? new J(n.errorWrapper) : yt;
+    return (e ? t.find(e) : o) ?? yt;
+  }, [e, t, n.errorWrapper]);
+}, Yt = (r, e, t) => {
+  const { eventSubject: n } = F(), o = me(t);
+  o.current = t, k(() => {
+    const s = n.pipe(pe((i) => i.type === e && i.sender.key === r)).subscribe((i) => {
       o.current(i);
     });
     return () => s.unsubscribe();
   }, [n, r, e]);
-}, xo = ({ children: r }) => {
+}, Ao = ({ children: r }) => {
   var l;
-  const e = Q(), t = D(), n = G(), o = Ao(), s = K(() => ({}), []), i = Ar(e.key, o, t.form.errorProps, s);
-  if (Jt(e.key, "onChange", (d) => {
+  const e = X(), t = F(), n = q(), o = xo(), s = K(() => ({}), []), i = xr(e.key, o, t.form.errorProps, s);
+  if (Yt(e.key, "onChange", (d) => {
     var p;
     return (p = e.field) == null ? void 0 : p.setValue(d.value);
-  }), Jt(e.key, "onBlur", (d) => {
+  }), Yt(e.key, "onBlur", (d) => {
     var p;
     return (p = e.field) == null ? void 0 : p.setTouched();
   }), n.erroneous)
-    return /* @__PURE__ */ h(pt, { children: r });
+    return /* @__PURE__ */ h(vt, { children: r });
   const c = { ...i.get, error: (l = e.field) == null ? void 0 : l.error };
-  return ar(o.component, c, r);
-}, Oo = P("Erroneous", xo);
-function xr(r) {
+  return cr(o.component, c, r);
+}, Oo = P("Erroneous", Ao);
+function Ar(r) {
   return r.message ?? `Validation failed: ${r.settings.key}`;
 }
 function No(r) {
   if (r)
-    return r == null ? void 0 : r.map(xr).join(" ");
+    return r == null ? void 0 : r.map(Ar).join(" ");
 }
-var be, Ce, ee, te;
-const Ue = class Ue {
+var Ce, Se, ee, te;
+const Je = class Je {
   constructor(e, t, n, o) {
-    y(this, be, new cr());
-    y(this, Ce, void 0);
+    y(this, Ce, new lr());
+    y(this, Se, void 0);
     y(this, ee, void 0);
     y(this, te, void 0);
     /**
@@ -1795,7 +1798,7 @@ const Ue = class Ue {
      * @param value the validated value.
      */
     a(this, "sendValidationEvent", (e) => {
-      u(this, be).next(e);
+      u(this, Ce).next(e);
     });
     /**
      * Performs a validation of the value.
@@ -1820,20 +1823,20 @@ const Ue = class Ue {
      * Releases allocated resources, must be used when destroying an object instance.
      */
     a(this, "dispose", () => {
-      u(this, Ce).forEach((e) => e.unsubscribe());
+      u(this, Se).forEach((e) => e.unsubscribe());
     });
     const s = o ?? No;
-    F(this, te, (i) => t(i, e)), F(this, ee, u(this, be).pipe(
-      dn(200),
-      zt(u(this, te)),
-      hn((i) => i),
-      zt(s)
-    )), F(this, Ce, [
+    x(this, te, (i) => t(i, e)), x(this, ee, u(this, Ce).pipe(
+      hn(200),
+      lt(u(this, te)),
+      pn((i) => i),
+      lt(s)
+    )), x(this, Se, [
       u(this, ee).subscribe(n)
     ]);
   }
 };
-be = new WeakMap(), Ce = new WeakMap(), ee = new WeakMap(), te = new WeakMap(), /**
+Ce = new WeakMap(), Se = new WeakMap(), ee = new WeakMap(), te = new WeakMap(), /**
  * Creates a DataValidator instance.
  * @param store the form viewer settings
  * @param resolver the validation function factory.
@@ -1843,82 +1846,81 @@ be = new WeakMap(), Ce = new WeakMap(), ee = new WeakMap(), te = new WeakMap(), 
  * @template T the validation function factory arguments.
  * @returns the DataValidator instance.
  */
-a(Ue, "create", (e, t, n, o, s) => new Ue(e, t(n), o, s));
-let at = Ue;
-const Or = $.div`
+a(Je, "create", (e, t, n, o, s) => new Je(e, t(n), o, s));
+let ht = Je;
+const Or = R.div`
   display: flex;
 `;
-function zo(r, e) {
-  const t = fe(e), n = fe(r);
-  t.current = e, n.current = r, E(() => (n.current(), () => {
+function jo(r, e) {
+  const t = me(e), n = me(r);
+  t.current = e, n.current = r, k(() => (n.current(), () => {
     t.current();
   }), []);
 }
-const jo = (r) => {
-  const e = D(), t = Q(), n = fe([]), o = K(() => {
+const zo = (r) => {
+  const e = F(), t = X(), n = me([]), o = K(() => {
     n.current.forEach((i) => i.unsubscribe());
   }, []), s = K(() => {
     const i = [];
-    o(), tn(t.store.events, (c, l) => {
-      const d = [];
-      c.forEach((g) => {
-        const v = e.findAction(g), X = Mo(v.func, g.args);
-        d.push(pn(X));
-      });
-      const p = e.eventSubject.pipe(
-        he((g) => g.type === l && g.sender.key === t.store.key),
-        ...d,
-        fn((g, v) => (console.error(g), v))
+    tn(t.store.events, (c, l) => {
+      const d = Mo(e, c), p = e.eventSubject.pipe(
+        pe((g) => g.type === l && g.sender.key === t.store.key),
+        lt(d),
+        fn((g, w) => (console.error(g), w))
       ).subscribe();
       i.push(p);
     }), n.current = i;
-  }, [t.store.events, t.store.key, e, o]);
-  E(() => {
+  }, [t.store.events, t.store.key, e]);
+  jo(() => {
     s();
-  }, [s, o]), zo(() => {
-    s();
-    const i = new st(yt, t, e, [], r);
+    const i = new ut(St, t, e, [], r);
     e.eventSubject.next(i);
   }, () => {
-    const i = new st(vt, t, e, [], r);
+    const i = new ut(Pt, t, e, [], r);
     e.eventSubject.next(i), o();
   });
 };
 function Mo(r, e) {
-  return async (t) => {
-    const n = e ? { ...e } : {}, o = r(t, n);
-    return wt(o) && await o, t;
+  const t = e.map((n) => ({
+    func: r.findAction(n).func,
+    args: n.args ? { ...n.args } : {}
+  }));
+  return async (n) => {
+    for (const { func: o, args: s } of t) {
+      const i = o(n, s);
+      Et(i) && await i;
+    }
   };
 }
-const Ro = () => {
-  const r = Q(), { componentWrapper: e, computeChildren: t } = G(), n = D(), o = K((U) => n.localizeComponent("component", U), [n]), s = ho(), i = K((U, ue) => t ? t(U, ue) : bo(U, n.form.componentTree, s, ue), [t, n.form.componentTree, s]), c = ae(
+const $o = () => {
+  const r = X(), { componentWrapper: e, computeChildren: t } = q(), n = F(), o = K((Z) => n.localizeComponent("component", Z), [n]), s = ho(), i = K((Z, ue) => t ? t(Z, ue) : bo(Z, n.form.componentTree, s, ue), [t, n.form.componentTree, s]), c = ae(
     () => new Dr(r, n, o, i),
     [r, n, o, i]
   );
-  jo(c);
-  const l = c.get, { kind: d, component: p } = r.model, g = ft(l.className, c.wrapperClassName), v = e ?? Or, X = r.store.tooltipProps ? ko : cn, xe = e ?? p, le = /* @__PURE__ */ h(p, { ...l });
-  return d === "container" ? /* @__PURE__ */ h(xe, { ...l, className: g }) : /* @__PURE__ */ h(v, { className: d === "template" ? g : c.wrapperClassName, children: d === "template" ? le : /* @__PURE__ */ h(X, { children: /* @__PURE__ */ h(Oo, { children: le }) }) });
-}, $o = P("ComponentViewer", Ro), Lo = ({ componentData: r }) => /* @__PURE__ */ h(Er, { value: r, children: /* @__PURE__ */ h($o, {}) }), Io = P("ComponentTreeItem", Lo), Bo = ({ data: r }) => /* @__PURE__ */ h(po, { value: Nr, children: r.map((e) => /* @__PURE__ */ h(Io, { componentData: e }, e.id)) }), Nr = P("ComponentTree", Bo), Ko = () => {
+  zo(c);
+  const { key: l, ...d } = c.get, { kind: p, component: g } = r.model, w = wt(d.className, c.wrapperClassName), Oe = e ?? Or, Ne = r.store.tooltipProps ? ko : cn, je = e ?? g, le = /* @__PURE__ */ h(g, { ...d }, l);
+  return p === "container" ? /* @__PURE__ */ h(je, { ...d, className: w }, l) : /* @__PURE__ */ h(Oe, { className: p === "template" ? w : c.wrapperClassName, children: p === "template" ? le : /* @__PURE__ */ h(Ne, { children: /* @__PURE__ */ h(Oo, { children: le }) }) });
+}, Ro = P("ComponentViewer", $o), Lo = ({ componentData: r }) => /* @__PURE__ */ h(Pr, { value: r, children: /* @__PURE__ */ h(Ro, {}) }), Io = P("ComponentTreeItem", Lo), Wo = ({ data: r }) => /* @__PURE__ */ h(po, { value: Nr, children: r.map((e) => /* @__PURE__ */ h(Io, { componentData: e }, e.id)) }), Nr = P("ComponentTree", Wo), Bo = () => {
   const r = window.innerWidth;
   return r <= 600 ? "mobile" : r <= 900 ? "tablet" : "desktop";
 };
-function Wo() {
-  const r = D(), e = G();
-  E(() => {
+function Ko() {
+  const r = F(), e = q();
+  k(() => {
     if (e.viewMode) {
       r.viewMode = e.viewMode;
       return;
     }
-    const t = () => r.viewMode = Ko();
+    const t = () => r.viewMode = Bo();
     return window.addEventListener("resize", t), () => window.removeEventListener("resize", t);
   }, [e.viewMode, r]);
 }
-const Uo = ({ event: r }) => {
-  const e = D(), t = G(), n = ae(() => [e.form.componentTree], [e.form.componentTree]);
-  return E(() => {
-    r == null || r(new pe(e.eventSubject));
-  }, [r, e.eventSubject]), Wo(), E(() => e.loadForm(t.getForm, t.formName), [e, t.getForm, t.formName]), /* @__PURE__ */ h(Nr, { data: n });
-}, Ho = P("Viewer", Uo);
+const Ho = ({ event: r }) => {
+  const e = F(), t = q(), n = ae(() => [e.form.componentTree], [e.form.componentTree]);
+  return k(() => {
+    r == null || r(new fe(e.eventSubject));
+  }, [r, e.eventSubject]), Ko(), k(() => e.loadForm(t.getForm, t.formName), [e, t.getForm, t.formName]), /* @__PURE__ */ h(Nr, { data: n });
+}, Uo = P("Viewer", Ho);
 function Jo(r) {
   if (!r)
     return;
@@ -1927,7 +1929,7 @@ function Jo(r) {
     e[t] = n instanceof V ? n : V.functionalAction(n);
   }), e;
 }
-class St {
+class kt {
   /**
    * Constructs a new FormViewerPropsStore from the given FormViewerProps.
    * @param formViewerProps the FormViewer props.
@@ -1937,7 +1939,7 @@ class St {
     /**
      * The metadata of the form viewer components.
      */
-    a(this, "view", new me());
+    a(this, "view", new ge());
     /**
      * The initial form data.
      */
@@ -1962,14 +1964,19 @@ class St {
      * The full language code passed in the FormViewer properties.
      */
     a(this, "propsLanguage");
-    e && this.applyProps(e), sr(this, {
-      view: O.ref,
-      initialData: O.ref,
-      validators: O.ref,
-      formValidators: O.ref,
-      localizer: O.ref,
-      actions: O.ref,
-      propsLanguage: O.ref
+    /**
+     * The default error wrapper used when errorType is not specified in the form.
+     */
+    a(this, "errorWrapper");
+    e && this.applyProps(e), ir(this, {
+      view: T.ref,
+      initialData: T.ref,
+      validators: T.ref,
+      formValidators: T.ref,
+      localizer: T.ref,
+      actions: T.ref,
+      propsLanguage: T.ref,
+      errorWrapper: T.ref
     }, { name: L("FormViewerPropsStore") });
   }
   /**
@@ -1977,15 +1984,15 @@ class St {
    * @param formViewerProps the properties to apply.
    */
   applyProps(e) {
-    this.view = e.view, this.initialData = e.initialData ?? {}, this.validators = e.validators, this.formValidators = e.formValidators, this.localizer = e.localize, this.actions = Jo(e.actions), this.propsLanguage = e.language;
+    this.view = e.view, this.initialData = e.initialData ?? {}, this.validators = e.validators, this.formValidators = e.formValidators, this.localizer = e.localize, this.actions = Jo(e.actions), this.propsLanguage = e.language, this.errorWrapper = e.errorWrapper;
   }
   /**
    * Returns the clone of the FormViewerPropsStore object.
    * @returns the clone of the FormViewerPropsStore object.
    */
   clone() {
-    const e = new St();
-    return e.view = this.view, e.initialData = this.initialData, e.validators = this.validators, e.formValidators = this.formValidators, e.localizer = this.localizer, e.actions = this.actions, e.propsLanguage = this.propsLanguage, e;
+    const e = new kt();
+    return e.view = this.view, e.initialData = this.initialData, e.validators = this.validators, e.formValidators = this.formValidators, e.localizer = this.localizer, e.actions = this.actions, e.propsLanguage = this.propsLanguage, e.errorWrapper = this.errorWrapper, e;
   }
 }
 const qo = {
@@ -1994,26 +2001,26 @@ const qo = {
   validate: V.functionalAction(async (r) => await r.store.form.componentTree.validate()),
   clear: V.functionalAction((r) => r.store.form.componentTree.clear()),
   reset: V.functionalAction((r) => r.store.form.componentTree.reset())
-}, zr = "validator-", Zo = (r) => `${zr}${r}`, Ei = (r) => r.startsWith(zr), Pi = (r) => {
-  const e = `${r.localizationStringId} = ${r.localization}`, t = new lr(e), n = new ur(`${r.language.fullCode}`), o = n.addResource(t);
+}, jr = "validator-", Zo = (r) => `${jr}${r}`, Pi = (r) => r.startsWith(jr), Ei = (r) => {
+  const e = `${r.localizationStringId} = ${r.localization}`, t = new ur(e), n = new dr(`${r.language.fullCode}`), o = n.addResource(t);
   if (o.length > 0)
-    return z.error([...o]);
+    return j.error([...o]);
   const s = n.getMessage(r.localizationStringId);
   if (typeof s > "u")
-    return z.error([{ message: "Localization message not found", name: "MessageNotFound" }]);
+    return j.error([{ message: "Localization message not found", name: "MessageNotFound" }]);
   if (s.value === null)
-    return z.error([{ message: "Localization message is null", name: "MessageIsNull" }]);
+    return j.error([{ message: "Localization message is null", name: "MessageIsNull" }]);
   let i = "";
   try {
     i = n.formatPattern(s.value, r.data);
   } catch (c) {
     if (c instanceof Error)
-      return z.error([c]);
+      return j.error([c]);
     throw c;
   }
-  return z.success(i);
+  return j.success(i);
 }, Yo = (r, e, t, n = "component") => {
-  const o = r.componentTree, { defaultBundle: s, fluentBundle: i } = jr(r, e), c = {};
+  const o = r.componentTree, { defaultBundle: s, fluentBundle: i } = zr(r, e), c = {};
   return Object.keys(t.props).forEach((l) => {
     const d = t.props[l];
     if (!Sr(d))
@@ -2025,23 +2032,23 @@ const qo = {
     }
     try {
       c[l] = i.formatPattern(g.value, o.fluentData);
-    } catch (v) {
-      console.error(v);
+    } catch (w) {
+      console.error(w);
     }
   }), c;
 }, Qo = (r, e, t, n) => {
-  const o = Zo(n), s = "message", i = C(`${t.key}_${o}_${s}`), { defaultBundle: c, fluentBundle: l } = jr(r, e), d = l.getMessage(i) ?? (c == null ? void 0 : c.getMessage(i));
+  const o = Zo(n), s = "message", i = C(`${t.key}_${o}_${s}`), { defaultBundle: c, fluentBundle: l } = zr(r, e), d = l.getMessage(i) ?? (c == null ? void 0 : c.getMessage(i));
   if (d)
     try {
       return l.formatPattern(d.value, r.componentTree.fluentData);
     } catch (p) {
       console.error(p);
     }
-}, jr = (r, e) => {
+}, zr = (r, e) => {
   const t = r.defaultLanguage !== e ? r.localization.getFluentBundle(r.defaultLanguage.fullCode) : void 0, n = r.localization.getFluentBundle(e.fullCode);
   return { defaultBundle: t, fluentBundle: n };
 };
-class Ye {
+class Ge {
   /**
    * Creates a localization language for the form builder.
    * @param code the language code, for example, 'en'.
@@ -2050,7 +2057,7 @@ class Ye {
    * @param description the description of the language, for example 'American English'.
    * @param bidi the type of text layout, for example, BiDi.LTR.
    */
-  constructor(e, t, n, o, s = Z.LTR) {
+  constructor(e, t, n, o, s = Q.LTR) {
     this.code = e, this.dialect = t, this.name = n, this.description = o, this.bidi = s;
   }
   /**
@@ -2065,18 +2072,18 @@ class Ye {
    * @returns the object clone.
    */
   static clone(e) {
-    return new Ye(e.code, e.dialect, e.name, e.description, e.bidi);
+    return new Ge(e.code, e.dialect, e.name, e.description, e.bidi);
   }
 }
 const Mr = Or;
 Mr.displayName = "Screen";
-const { height: Go } = Je, { flexDirection: Xo, gap: _o } = yr, Rr = $e({
-  ...yr,
-  ...Je,
+const { height: Go } = Ze, { flexDirection: Xo, gap: _o } = vr, $r = Ie({
+  ...vr,
+  ...Ze,
   height: Go.setup({ default: "100%" }),
   flexDirection: Xo.default("column"),
   gap: _o.default("10px")
-}), es = Re(Rr), B = new Y(
+}), es = Le($r), B = new J(
   Mr,
   void 0,
   void 0,
@@ -2088,32 +2095,32 @@ const { height: Go } = Je, { flexDirection: Xo, gap: _o } = yr, Rr = $e({
   void 0,
   void 0,
   "container"
-), ts = $.h1`
+), ts = R.h1`
   color: red;
-`, Et = ({ error: r }) => /* @__PURE__ */ h(ts, { children: (r == null ? void 0 : r.message) ?? JSON.stringify(r) });
-Et.displayName = "InternalError";
-const Le = new Y(Et);
+`, Dt = ({ error: r }) => /* @__PURE__ */ h(ts, { children: (r == null ? void 0 : r.message) ?? JSON.stringify(r) });
+Dt.displayName = "InternalError";
+const We = new J(Dt);
 function rs(r) {
-  const e = new R(Le.name, Le.type);
+  const e = new $(We.name, We.type);
   e.props.error = { value: r };
-  const t = new R(B.name, B.type);
+  const t = new $(B.name, B.type);
   return t.children = [e], t;
 }
 function ns(r) {
   const e = { error: r };
-  return new Y(Et, void 0, void 0, void 0, void 0, e);
+  return new J(Dt, void 0, void 0, void 0, void 0, e);
 }
-const Ie = "Template:";
-function $r(r) {
-  return Ie + r;
+const Be = "Template:";
+function Rr(r) {
+  return Be + r;
 }
 function Lr(r) {
-  if (r.startsWith(Ie))
-    return r.slice(Ie.length);
+  if (r.startsWith(Be))
+    return r.slice(Be.length);
   throw new Error(`Cannot determine template name from '${r}'`);
 }
-function qt(r) {
-  return r.startsWith(Ie);
+function Qt(r) {
+  return r.startsWith(Be);
 }
 function f() {
   return {
@@ -2133,27 +2140,48 @@ function m(r) {
     return t != null && t.success ? !0 : ((n = t == null ? void 0 : t.error.issues) == null ? void 0 : n[0].message) ?? !1;
   };
 }
-const Ne = q.array(q.any()), os = {
-  nonEmpty: f().withValidatorFactory(({ message: r }) => m(Ne.nonempty(r))),
-  length: f().withParameter("length", "number", !0).withValidatorFactory(({ length: r, message: e }) => m(Ne.length(r, e))),
-  min: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(Ne.min(r, e))),
-  max: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(Ne.max(r, e)))
-}, Zt = q.boolean(), ss = {
-  truthy: f().withValidatorFactory(({ message: r }) => m(Zt.refine((e) => e, r))),
-  falsy: f().withValidatorFactory(({ message: r }) => m(Zt.refine((e) => !e, r)))
-}, Yt = q.date(), is = {
-  min: f().withParameter("value", "date", !0).withValidatorFactory(({ value: r, message: e }) => m(Yt.min(new Date(r), e))),
-  max: f().withParameter("value", "date", !0).withValidatorFactory(({ value: r, message: e }) => m(Yt.max(new Date(r), e)))
-}, H = q.number(), as = {
-  min: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(H.min(r, e))),
-  max: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(H.max(r, e))),
-  lessThan: f().withParameter("value", "number", !0).withValidatorFactory(({ value: r, message: e }) => m(H.lt(r, e))),
-  moreThan: f().withParameter("value", "number", !0).withValidatorFactory(({ message: r, value: e }) => m(H.gt(e, r))),
-  integer: f().withValidatorFactory(({ message: r }) => m(H.int(r))),
-  multipleOf: f().withParameter("value", "number", !0).withValidatorFactory(({ message: r, value: e }) => m(H.multipleOf(e, r))),
-  finite: f().withValidatorFactory(({ message: r }) => m(H.finite(r)))
-}, cs = {}, S = q.string(), ls = {
-  required: f().withValidatorFactory(({ message: r }) => m(q.string({ required_error: r }).nonempty(r))),
+const de = H.array(H.any()), os = {
+  nonEmpty: f().withValidatorFactory(({ message: r }) => m(de.nonempty(r))),
+  length: f().withParameter("length", "number", !0).withValidatorFactory(({ length: r, message: e }) => m(de.length(r, e))),
+  min: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(de.min(r, e))),
+  max: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(de.max(r, e))),
+  code: f().withParameter("code", "array", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
+    const t = G("value", r);
+    return m(de.refine(t, e));
+  })
+}, et = H.boolean(), ss = {
+  truthy: f().withValidatorFactory(({ message: r }) => m(et.refine((e) => e, r))),
+  falsy: f().withValidatorFactory(({ message: r }) => m(et.refine((e) => !e, r))),
+  code: f().withParameter("code", "boolean", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
+    const t = G("value", r);
+    return m(et.refine(t, e));
+  })
+}, tt = H.date(), is = {
+  min: f().withParameter("value", "date", !0).withValidatorFactory(({ value: r, message: e }) => m(tt.min(new Date(r), e))),
+  max: f().withParameter("value", "date", !0).withValidatorFactory(({ value: r, message: e }) => m(tt.max(new Date(r), e))),
+  code: f().withParameter("code", "date", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
+    const t = G("value", r);
+    return m(tt.refine(t, e));
+  })
+}, I = H.number(), as = {
+  min: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(I.min(r, e))),
+  max: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(I.max(r, e))),
+  lessThan: f().withParameter("value", "number", !0).withValidatorFactory(({ value: r, message: e }) => m(I.lt(r, e))),
+  moreThan: f().withParameter("value", "number", !0).withValidatorFactory(({ message: r, value: e }) => m(I.gt(e, r))),
+  integer: f().withValidatorFactory(({ message: r }) => m(I.int(r))),
+  multipleOf: f().withParameter("value", "number", !0).withValidatorFactory(({ message: r, value: e }) => m(I.multipleOf(e, r))),
+  finite: f().withValidatorFactory(({ message: r }) => m(I.finite(r))),
+  code: f().withParameter("code", "number", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
+    const t = G("value", r);
+    return m(I.refine(t, e));
+  })
+}, cs = H.object({}), ls = {
+  code: f().withParameter("code", "number", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
+    const t = G("value", r);
+    return m(cs.refine(t, e));
+  })
+}, S = H.string(), us = {
+  required: f().withValidatorFactory(({ message: r }) => m(H.string({ required_error: r }).nonempty(r))),
   nonEmpty: f().withValidatorFactory(({ message: r }) => m(S.nonempty(r))),
   length: f().withParameter("length", "number", !0).withValidatorFactory(({ length: r, message: e }) => m(S.length(r, e))),
   min: f().withParameter("limit", "number", !0).withValidatorFactory(({ limit: r, message: e }) => m(S.min(r, e))),
@@ -2168,91 +2196,91 @@ const Ne = q.array(q.any()), os = {
   startsWith: f().withParameter("value", "string", !0).withValidatorFactory(({ message: r, value: e }) => m(S.startsWith(e, r))),
   endsWith: f().withParameter("value", "string", !0).withValidatorFactory(({ message: r, value: e }) => m(S.endsWith(e, r))),
   code: f().withParameter("code", "string", !0, void 0, "code").withValidatorFactory(({ code: r, message: e }) => {
-    const t = vr("value", r);
+    const t = G("value", r);
     return m(S.refine(t, e));
   })
-}, us = {
-  string: ls,
+}, ds = {
+  string: us,
   number: as,
   boolean: ss,
   date: is,
-  object: cs,
+  object: ls,
   array: os,
   enum: {}
-}, T = (r) => r, w = (r) => {
+}, E = (r) => r, v = (r) => {
   throw new Error(`Cannot convert from '${r}'`);
-}, Qt = (r) => JSON.parse(r), Xe = (r) => JSON.stringify(r), _e = (r) => r.toString(), de = (r) => (e) => e instanceof r ? e : w(e), ds = (r) => {
+}, Gt = (r) => JSON.parse(r), rt = (r) => JSON.stringify(r), nt = (r) => r.toString(), he = (r) => (e) => e instanceof r ? e : v(e), hs = (r) => {
   const e = Number(r);
-  return isNaN(e) && w(r), e;
-}, Gt = (r) => new Date(r), hs = {
+  return isNaN(e) && v(r), e;
+}, Xt = (r) => new Date(r), ps = {
   string: {
-    string: T,
-    number: ds,
+    string: E,
+    number: hs,
     boolean: (r) => r === "true",
-    object: Qt,
-    array: Qt,
-    enum: T,
-    date: Gt
+    object: Gt,
+    array: Gt,
+    enum: E,
+    date: Xt
   },
   number: {
-    string: _e,
-    number: T,
+    string: nt,
+    number: E,
     boolean: (r) => r === 1,
-    object: w,
-    array: w,
-    enum: T,
-    date: Gt
+    object: v,
+    array: v,
+    enum: E,
+    date: Xt
   },
   boolean: {
-    string: _e,
+    string: nt,
     number: (r) => r ? 1 : 0,
-    boolean: T,
-    object: w,
-    array: w,
-    enum: T,
-    date: w
+    boolean: E,
+    object: v,
+    array: v,
+    enum: E,
+    date: v
   },
   object: {
-    string: Xe,
-    number: w,
-    boolean: w,
-    object: T,
-    array: w,
-    enum: T,
-    date: w
+    string: rt,
+    number: v,
+    boolean: v,
+    object: E,
+    array: v,
+    enum: E,
+    date: v
   },
   array: {
-    string: Xe,
-    number: w,
-    boolean: w,
-    object: w,
-    array: T,
-    enum: T,
-    date: w
+    string: rt,
+    number: v,
+    boolean: v,
+    object: v,
+    array: E,
+    enum: E,
+    date: v
   },
   enum: {
-    string: Xe,
-    number: de(Number),
-    boolean: de(Boolean),
-    object: de(Object),
-    array: de(Array),
-    enum: T,
-    date: de(Date)
+    string: rt,
+    number: he(Number),
+    boolean: he(Boolean),
+    object: he(Object),
+    array: he(Array),
+    enum: E,
+    date: he(Date)
   },
   date: {
-    string: _e,
+    string: nt,
     number: (r) => r.getTime(),
-    boolean: w,
-    object: w,
-    array: w,
-    enum: T,
-    date: T
+    boolean: v,
+    object: v,
+    array: v,
+    enum: E,
+    date: E
   }
-}, ps = (r) => typeof r == "string" ? "string" : typeof r == "number" ? "number" : typeof r == "boolean" ? "boolean" : r instanceof Date ? "date" : Array.isArray(r) ? "array" : typeof r == "object" ? "object" : "enum", fs = (r, e) => {
+}, fs = (r) => typeof r == "string" ? "string" : typeof r == "number" ? "number" : typeof r == "boolean" ? "boolean" : r instanceof Date ? "date" : Array.isArray(r) ? "array" : typeof r == "object" ? "object" : "enum", ms = (r, e) => {
   var o;
   if (r === null || typeof r > "u")
     return;
-  const t = ps(r), n = (o = hs[t]) == null ? void 0 : o[e];
+  const t = fs(r), n = (o = ps[t]) == null ? void 0 : o[e];
   if (!n)
     throw new Error(`Cannot convert ${r} from '${t}' to '${e}'`);
   try {
@@ -2261,21 +2289,21 @@ const Ne = q.array(q.any()), os = {
     throw new Error(`Cannot convert ${r} from '${t}' to '${e}'. ${s}.`);
   }
 };
-function ms(r) {
+function gs(r) {
   return function(e) {
-    return gs(r, e);
+    return ys(r, e);
   };
 }
-function gs(r, e) {
-  const t = vs(r, e);
+function ys(r, e) {
+  const t = ws(r, e);
   return async (n, o) => {
     if (!t)
       return;
     const s = [];
     for (const { settings: i, validator: c, params: l } of t) {
       const d = {};
-      l == null || l.filter((v) => typeof v.default < "u").map((v) => d[v.key] = v.default), Object.assign(d, i.args);
-      const p = c(n, o, d), g = wt(p) ? await p : p;
+      l == null || l.filter((w) => typeof w.default < "u").map((w) => d[w.key] = w.default), Object.assign(d, i.args);
+      const p = c(n, o, d), g = Et(p) ? await p : p;
       g !== !0 && s.push({
         settings: i,
         message: typeof g == "string" ? g : d.message
@@ -2284,11 +2312,11 @@ function gs(r, e) {
     return s;
   };
 }
-const ys = () => !0;
-function vs(r, e) {
+const vs = () => !0;
+function ws(r, e) {
   if (!e || !e.validations || !e.validations.length)
     return;
-  const t = [...e.validations].sort(ws), n = (o) => {
+  const t = [...e.validations].sort(bs), n = (o) => {
     var s;
     if (!o.type) {
       const i = r.internal[o.key], c = i.validatorFactory(o.args ?? {});
@@ -2299,15 +2327,15 @@ function vs(r, e) {
       if (i)
         return { settings: o, validator: i.validate, params: i.params };
     }
-    return console.warn(`Cannot find rule, key: '${o.key}', type: '${o.type}'`), { settings: o, validator: ys };
+    return console.warn(`Cannot find rule, key: '${o.key}', type: '${o.type}'`), { settings: o, validator: vs };
   };
   return t.map(n);
 }
-function ws(r, e) {
+function bs(r, e) {
   return e.key === "code" ? -1 : e.key === "required" ? 1 : 0;
 }
-var Se, Ee;
-class bs {
+var Pe, Ee;
+class Cs {
   /**
    * Creates the field with form data for the component.
    * @param store the form viewer settings.
@@ -2318,7 +2346,7 @@ class bs {
    * @param deferFieldCalculation if true, then the calculated field must be explicitly initialized.
    */
   constructor(e, t, n, o, s, i) {
-    y(this, Se, void 0);
+    y(this, Pe, void 0);
     /**
      * @inheritDoc
      */
@@ -2355,27 +2383,27 @@ class bs {
       throw new Error("'model.typeOfValue' is undefined");
     this.valued = n.valued, this.valueType = n.valueType;
     const c = "SimpleField";
-    W(this, {
+    U(this, {
       model: !1,
       valueCalculator: !1,
-      dataValidator: O.ref
-    }, { name: L(c, { key: t.key }) }), F(this, Ee, [
-      Ot(
+      dataValidator: T.ref
+    }, { name: L(c, { key: t.key }) }), x(this, Ee, [
+      Mt(
         () => {
-          this.dataValidator = at.create(
+          this.dataValidator = ht.create(
             e,
-            ms(this.getValidationRules(this.valueType)),
+            gs(this.getValidationRules(this.valueType)),
             t.schema,
             (l) => this.error = l,
             e.localizeErrorMessages.bind(e, t)
           ), on(() => {
             var l;
-            (l = u(this, Se)) == null || l.dispose(), F(this, Se, this.dataValidator);
+            (l = u(this, Pe)) == null || l.dispose(), x(this, Pe, this.dataValidator);
           });
         },
-        { name: $t(c, "setValidator", { key: t.key }) }
+        { name: Wt(c, "setValidator", { key: t.key }) }
       ),
-      Ot(
+      Mt(
         () => {
           var g;
           const l = ((g = e.initialDataSlice) == null ? void 0 : g[t.key]) ?? this.initialValue;
@@ -2390,7 +2418,7 @@ class bs {
           }
           this.value = l;
         },
-        { name: $t(c, "setValue", { key: t.key }) }
+        { name: Wt(c, "setValue", { key: t.key }) }
       ),
       () => {
         var l;
@@ -2429,7 +2457,7 @@ class bs {
    */
   setValue(e) {
     var t, n, o;
-    if (this.value = fs(e, this.valueType), !this.needValidate) {
+    if (this.value = ms(e, this.valueType), !this.needValidate) {
       this.clearError();
       return;
     }
@@ -2487,13 +2515,13 @@ class bs {
     this.error = void 0;
   }
 }
-Se = new WeakMap(), Ee = new WeakMap();
+Pe = new WeakMap(), Ee = new WeakMap();
 function Ir(r) {
   var t;
   const e = (t = r.props.storeDataInParentForm) == null ? void 0 : t.value;
   return typeof e > "u" ? !0 : e;
 }
-class Br {
+class Wr {
   /**
    * Creates the nested form field with form data for the component.
    * @param componentStore the component settings.
@@ -2524,7 +2552,7 @@ class Br {
           return n.setError(t);
       });
     });
-    this.componentStore = e, this.viewerStore = t, W(
+    this.componentStore = e, this.viewerStore = t, U(
       this,
       void 0,
       { name: L("FormField", { key: e.key }) }
@@ -2613,7 +2641,7 @@ class Br {
     return this.form.errors;
   }
 }
-function Cs(r, e) {
+function Ss(r, e) {
   let t = 1;
   for (; t < 1e4; ) {
     const o = `${r}${t}`;
@@ -2624,7 +2652,7 @@ function Cs(r, e) {
   const n = (/* @__PURE__ */ new Date()).getTime();
   return `${r}_${n}`;
 }
-class et {
+class ot {
   /**
    * Creates a new instance of Form.
    * @param componentTree the root component of the form.
@@ -2666,7 +2694,7 @@ class et {
      * Default localization language of the form.
      */
     a(this, "defaultLanguage");
-    this.componentTree = e, this.localization = t, this.actions = n, this.languages = o, this.defaultLanguage = s, this.componentTree.events.onBeforeDelete.subscribe(this.onComponentDataBeforeDelete.bind(this)), this.componentTree.events.onAfterKeyChanged.subscribe(this.onComponentDataAfterKeyChanged.bind(this)), W(this);
+    this.componentTree = e, this.localization = t, this.actions = n, this.languages = o, this.defaultLanguage = s, this.componentTree.events.onBeforeDelete.subscribe(this.onComponentDataBeforeDelete.bind(this)), this.componentTree.events.onAfterKeyChanged.subscribe(this.onComponentDataAfterKeyChanged.bind(this)), U(this);
   }
   /**
    * @returns the actions names array.
@@ -2708,7 +2736,7 @@ class et {
   cloneAction(e) {
     if (!this.actions)
       return;
-    const t = new Set(this.actionNames), n = JSON.parse(JSON.stringify(e.actionDefinition)), o = Cs(`${e.name}_`, t);
+    const t = new Set(this.actionNames), n = JSON.parse(JSON.stringify(e.actionDefinition)), o = Ss(`${e.name}_`, t);
     this.actions[o] = V.createFromObject(n);
   }
   rebindActionData(e, t) {
@@ -2746,22 +2774,22 @@ class et {
     this.localization.changeComponentKey(t, n);
   }
 }
-const Ss = "LocalizationStore";
-var He, Kr;
+const Ps = "LocalizationStore";
+var qe, Br;
 class Es {
   constructor(e, t) {
-    y(this, He);
-    this.languageFullCode = e, this.localizationStore = t, W(this, void 0, { name: L("FluentBundleHolder") });
+    y(this, qe);
+    this.languageFullCode = e, this.localizationStore = t, U(this, void 0, { name: L("FluentBundleHolder") });
   }
   get fluentBundle() {
-    const e = this.localizationStore.value[this.languageFullCode], t = new ur(this.languageFullCode);
-    return e && b(this, He, Kr).call(this, e).forEach((o) => {
-      const s = t.addResource(new lr(o));
+    const e = this.localizationStore.value[this.languageFullCode], t = new dr(this.languageFullCode);
+    return e && b(this, qe, Br).call(this, e).forEach((o) => {
+      const s = t.addResource(new ur(o));
       s.length > 0 && (console.error(`Unable to add localization resource: ${o}`), s.forEach(console.error));
     }), t;
   }
 }
-He = new WeakSet(), Kr = function(e) {
+qe = new WeakSet(), Br = function(e) {
   const t = [];
   return Object.entries(e).forEach(([n, o]) => {
     Object.entries(o ?? {}).forEach(([s, i]) => {
@@ -2771,7 +2799,7 @@ He = new WeakSet(), Kr = function(e) {
     });
   }), t;
 };
-class tt {
+class st {
   /**
    * The constructor.
    * @param value the initial localization value.
@@ -2782,7 +2810,7 @@ class tt {
      * The localization data.
      */
     a(this, "value", {});
-    W(this, void 0, { name: L(Ss) }), this.value = e;
+    U(this, void 0, { name: L(Ps) }), this.value = e;
   }
   /**
    * Returns value of localization constant.
@@ -2900,21 +2928,21 @@ class tt {
     }
   }
 }
-var ct = /* @__PURE__ */ ((r) => (r.version1 = "1", r))(ct || {});
-const Ps = {
+var pt = /* @__PURE__ */ ((r) => (r.version1 = "1", r))(pt || {});
+const Ts = {
   RsDatePicker: ["calendarDefaultDate", "defaultValue", "value"],
   RsCalendar: ["defaultValue", "value"]
 };
-function Wr(r, e, t, n) {
+function Kr(r, e, t, n) {
   var s;
   let o = e(t, r);
   return (s = r[n]) == null || s.forEach((i) => {
-    o = Wr(i, e, o, n);
+    o = Kr(i, e, o, n);
   }), o;
 }
-const rt = new Ye("en", "US", "English", "American English");
-var Pe, Te, ut;
-const Pt = class Pt {
+const it = new Ge("en", "US", "English", "American English");
+var Te, Ve, mt;
+const Ft = class Ft {
   /**
    * Creates form viewer settings.
    * @param formViewerPropsStore the form viewer store settings.
@@ -2926,7 +2954,7 @@ const Pt = class Pt {
      * Changes the form to the component with an error description.
      * @param e the error.
      */
-    y(this, Te);
+    y(this, Ve);
     /**
      * The currently selected language.
      */
@@ -2934,7 +2962,7 @@ const Pt = class Pt {
     /**
      * The Subject for submitting form events.
      */
-    a(this, "eventSubject", new cr());
+    a(this, "eventSubject", new lr());
     /**
      * Current display resolution type.
      */
@@ -2946,16 +2974,16 @@ const Pt = class Pt {
     /**
      * Models for templates that have not been explicitly defined.
      */
-    y(this, Pe, /* @__PURE__ */ new Map());
+    y(this, Te, /* @__PURE__ */ new Map());
     this.formViewerPropsStore = e, this.parentStore = t, this.parentComponentStore = n;
-    const o = this.createComponentData(new R(B.name, B.type)), s = new tt();
-    this.form = new et(o, s, {}, [], rt), sr(this, {
-      form: O,
+    const o = this.createComponentData(new $(B.name, B.type)), s = new st();
+    this.form = new ot(o, s, {}, [], it), ir(this, {
+      form: T,
       viewMode: !0,
       selectedLanguage: !0,
       clear: !0,
-      parentStore: O.ref,
-      parentComponentStore: O.ref,
+      parentStore: T.ref,
+      parentComponentStore: T.ref,
       initialDataSlice: !0
     }, { name: L("ViewerStore") });
   }
@@ -2999,8 +3027,8 @@ const Pt = class Pt {
    * Clears the form in Form Viewer.
    */
   clear() {
-    const e = this.form, t = this.createComponentData(new R(B.name, B.type)), n = new tt();
-    this.form = new et(t, n, {}, e.languages, e.defaultLanguage), e.dispose();
+    const e = this.form, t = this.createComponentData(new $(B.name, B.type)), n = new st();
+    this.form = new ot(t, n, {}, e.languages, e.defaultLanguage), e.dispose();
   }
   /**
    * @inheritDoc
@@ -3018,13 +3046,13 @@ const Pt = class Pt {
     if (Ir(this.parentComponentStore))
       return e;
     const t = e == null ? void 0 : e[this.parentComponentStore.key];
-    return Rn(t) ? t : void 0;
+    return $n(t) ? t : void 0;
   }
   /**
    * @inheritDoc
    */
   reduceScreen(e, t) {
-    return Wr(this.form.componentTree, e, t, "children");
+    return Kr(this.form.componentTree, e, t, "children");
   }
   /**
    * Searches for an action, returns definition for the found action.
@@ -3042,11 +3070,11 @@ const Pt = class Pt {
    */
   getModel(e) {
     const t = this.formViewerPropsStore.view.find(e);
-    return t || (qt(e) ? u(this, Pe).get(e) ?? this.addTemplateModel(e) : ns(`Type '${e}' is not found!`));
+    return t || (Qt(e) ? u(this, Te).get(e) ?? this.addTemplateModel(e) : ns(`Type '${e}' is not found!`));
   }
   addTemplateModel(e) {
     const t = Lr(e), n = Jr(t);
-    return u(this, Pe).set(n.type, n), n;
+    return u(this, Te).set(n.type, n), n;
   }
   /**
    * Loads a form by form name and sets that form in the form viewer.
@@ -3057,13 +3085,13 @@ const Pt = class Pt {
     if (e)
       try {
         const n = e(t);
-        if (wt(n)) {
-          n.then(this.applyStringForm.bind(this)).catch(b(this, Te, ut).bind(this));
+        if (Et(n)) {
+          n.then(this.applyStringForm.bind(this)).catch(b(this, Ve, mt).bind(this));
           return;
         }
         this.applyStringForm(n);
       } catch (n) {
-        b(this, Te, ut).call(this, n);
+        b(this, Ve, mt).call(this, n);
       }
   }
   /**
@@ -3087,14 +3115,14 @@ const Pt = class Pt {
     var t;
     return {
       custom: (t = this.formViewerPropsStore.validators) == null ? void 0 : t[e],
-      internal: us[e]
+      internal: ds[e]
     };
   }
   createField(e, t, n) {
-    if (!qt(t.type))
-      return new bs(this, e, t, Ts(this), this.getValidationRules.bind(this), n);
-    const o = new Pt(this.formViewerPropsStore.clone(), this, e);
-    return new Br(e, o);
+    if (!Qt(t.type))
+      return new Cs(this, e, t, Vs(this), this.getValidationRules.bind(this), n);
+    const o = new Ft(this.formViewerPropsStore.clone(), this, e);
+    return new Wr(e, o);
   }
   /**
    * Populates the value of this store with the values of the saved form.
@@ -3110,13 +3138,13 @@ const Pt = class Pt {
   }
   fixPropertyTypes(e) {
     var n;
-    const t = Ps[e.type];
+    const t = Ts[e.type];
     t == null || t.forEach((o) => this.fixDateProperty(e, o)), (n = e.children) == null || n.forEach((o) => this.fixPropertyTypes(o));
   }
   fixDateProperty(e, t) {
     var o;
     const n = (o = e.props[t]) == null ? void 0 : o.value;
-    (jn(n) || Mn(n)) && (e.props[t].value = new Date(n));
+    (zn(n) || Mn(n)) && (e.props[t].value = new Date(n));
   }
   /**
    * Populates the value of this store with the values of the saved form.
@@ -3125,9 +3153,9 @@ const Pt = class Pt {
   applyPersistedForm(e) {
     var p;
     const t = this.form, n = e.version;
-    typeof n < "u" && n !== ct.version1 && console.warn(`An unsupported version of form '${n}' has been detected. An attempt will be made to upload the form as version '${ct.version1}'.`);
-    const o = R.createFromObject(e.form), s = this.createComponentData(o, !0), i = new tt(J({}, e.localization)), c = ((p = e.languages) == null ? void 0 : p.map(Ye.clone)) ?? [], l = c.find((g) => g.fullCode === e.defaultLanguage) ?? rt, d = Nn(e.actions);
-    this.form = new et(s, i, d, c, l), this.form.errorProps = e.errorProps ?? {}, this.form.tooltipType = e.tooltipType, this.form.errorType = e.errorType, this.form.initFields(), t.dispose();
+    typeof n < "u" && n !== pt.version1 && console.warn(`An unsupported version of form '${n}' has been detected. An attempt will be made to upload the form as version '${pt.version1}'.`);
+    const o = $.createFromObject(e.form), s = this.createComponentData(o, !0), i = new st(Y({}, e.localization)), c = ((p = e.languages) == null ? void 0 : p.map(Ge.clone)) ?? [], l = c.find((g) => g.fullCode === e.defaultLanguage) ?? it, d = Nn(e.actions);
+    this.form = new ot(s, i, d, c, l), this.form.errorProps = e.errorProps ?? {}, this.form.tooltipType = e.tooltipType, this.form.errorType = e.errorType, this.form.initFields(), t.dispose();
   }
   /**
    * @returns the current display language.
@@ -3159,87 +3187,85 @@ const Pt = class Pt {
    */
   localizeErrorMessages(e, t) {
     if (t)
-      return t.map((n) => Qo(this.form, this.displayedLanguage, e, n.settings.key) ?? xr(n)).join(" ");
+      return t.map((n) => Qo(this.form, this.displayedLanguage, e, n.settings.key) ?? Ar(n)).join(" ");
   }
 };
-Pe = new WeakMap(), Te = new WeakSet(), ut = function(e) {
+Te = new WeakMap(), Ve = new WeakSet(), mt = function(e) {
   console.error(e);
   const t = rs(e);
   this.applyPersistedForm({
     form: t,
     localization: {},
-    defaultLanguage: rt.fullCode,
+    defaultLanguage: it.fullCode,
     languages: []
   });
 };
-let lt = Pt;
-function Ts(r) {
+let ft = Ft;
+function Vs(r) {
   return function(e, t) {
     const n = e.props[t];
-    if (Ze(n)) {
-      const { result: o } = Ct(n, r.form.componentTree);
+    if (Qe(n)) {
+      const { result: o } = Vt(n, r.form.componentTree);
       return [!0, o];
     }
     return Sr(n) ? [!0, r.localizeComponent("component", e)[t]] : [!1];
   };
 }
-function Vs(r) {
-  const [e, t] = mt();
-  return E(() => {
+function ks(r) {
+  const [e, t] = bt();
+  return k(() => {
     const n = r();
     return t(n), () => n.dispose();
   }, []), e;
-}
-function ks(r, e) {
-  E(() => {
-    if (!(!r || !e)) {
-      if (typeof e == "function") {
-        e(r);
-        return;
-      }
-      e.current = r;
-    }
-  }, [r, e]);
 }
 const Ds = ({
   children: r,
   props: { viewerRef: e, ...t },
   store: n
-}) => (ks(n, e), E(() => {
+}) => (ln(e, () => n, [n]), k(() => {
   var o;
   (o = t.onFormDataChange) == null || o.call(t, n.formData);
-}, [n.formData.data, n.formData.errors]), E(() => {
+}, [n.formData.data, n.formData.errors]), k(() => {
   n.formViewerPropsStore.applyProps(t);
-}, [t.initialData, t.view, t.validators, t.formValidators, t.localize, t.language, t.actions]), /* @__PURE__ */ h(Pr, { value: t, children: /* @__PURE__ */ h(bt, { value: n, children: r }) })), Ur = P("ExistingStoreProvider", Ds), Fs = ({ children: r, props: e }) => {
-  const t = K(() => new lt(new St(e)), [e]), n = Vs(t);
-  return n ? /* @__PURE__ */ h(Ur, { children: r, props: e, store: n }) : null;
-}, As = P("FactoryStoreProvider", Fs), xs = (r) => {
-  const e = ir(Yn);
-  return e ? /* @__PURE__ */ h(Ur, { children: r.children, props: r.props, store: e }) : /* @__PURE__ */ h(As, { children: r.children, props: r.props });
-}, Os = P("ViewerStoreProvider", xs);
+}, [
+  t.initialData,
+  t.view,
+  t.validators,
+  t.formValidators,
+  t.localize,
+  t.language,
+  t.actions,
+  t.errorWrapper
+]), /* @__PURE__ */ h(Er, { value: t, children: /* @__PURE__ */ h(Tt, { value: n, children: r }) })), Hr = P("ExistingStoreProvider", Ds), Fs = ({ children: r, props: e }) => {
+  const t = K(() => new ft(new kt(e)), [e]), n = ks(t);
+  return n ? /* @__PURE__ */ h(Hr, { children: r, props: e, store: n }) : null;
+}, xs = P("FactoryStoreProvider", Fs), As = (r) => {
+  const e = ar(Yn);
+  return e ? /* @__PURE__ */ h(Hr, { children: r.children, props: r.props, store: e }) : /* @__PURE__ */ h(xs, { children: r.children, props: r.props });
+}, Os = P("ViewerStoreProvider", As);
 sn({ enforceActions: "never" });
-const Ns = (r) => /* @__PURE__ */ h(uo, { children: /* @__PURE__ */ h(Os, { props: r, children: /* @__PURE__ */ h(co, { language: r.language, children: /* @__PURE__ */ ke(js, { children: [
+const Ns = (r) => /* @__PURE__ */ h(uo, { children: /* @__PURE__ */ h(Os, { props: r, children: /* @__PURE__ */ h(co, { language: r.language, children: /* @__PURE__ */ De(zs, { children: [
   /* @__PURE__ */ h(no, {}),
-  /* @__PURE__ */ h(Ho, { event: r.event })
-] }) }) }) }), zs = P("FormViewer", Ns), js = $.div`
+  /* @__PURE__ */ h(Uo, { event: r.event })
+] }) }) }) }), js = P("FormViewer", Ns), zs = R.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   gap: 5px;
-`, Ms = $.span`
+`, Ms = R.span`
   font-size: xx-large;
   color: red;
 `, [
   /**
    * **Internal use only.**
    */
-  Rs,
+  $s,
   /**
    * **Internal use only.**
    */
-  $s
-] = Fe("TemplateContext"), Ls = (r) => {
-  const e = G(), t = Q(), n = ae(() => {
+  Rs
+] = xe("TemplateContext"), Ls = (r) => {
+  const e = q(), t = X(), n = ae(() => {
     const s = {
       formName: Lr(t.store.type),
       computeChildren: void 0,
@@ -3248,19 +3274,19 @@ const Ns = (r) => /* @__PURE__ */ h(uo, { children: /* @__PURE__ */ h(Os, { prop
     return Object.assign({}, e, s);
   }, [t.store.type, e]);
   if (!e.getForm)
-    return /* @__PURE__ */ ke(Ms, { children: [
+    return /* @__PURE__ */ De(Ms, { children: [
       "Please define ",
       /* @__PURE__ */ h("code", { children: "getForm" }),
       " property!"
     ] });
-  if (!(t.field instanceof Br))
+  if (!(t.field instanceof Wr))
     return null;
   const o = t.field.viewerStore;
-  return /* @__PURE__ */ h($s, { value: { templateProps: r, viewerProps: e, data: t }, children: /* @__PURE__ */ h(bt, { value: o, children: /* @__PURE__ */ h(zs, { ...n }) }) });
-}, Hr = $e(Je), Is = Re(Hr);
+  return /* @__PURE__ */ h(Rs, { value: { templateProps: r, viewerProps: e, data: t }, children: /* @__PURE__ */ h(Tt, { value: o, children: /* @__PURE__ */ h(js, { ...n }) }) });
+}, Ur = Ie(Ze), Is = Le(Ur);
 function Jr(r) {
-  const e = $r(r), t = { name: r, storeDataInParentForm: !0 };
-  return new Y(
+  const e = Rr(r), t = { name: r, storeDataInParentForm: !0 };
+  return new J(
     Ls,
     r,
     void 0,
@@ -3275,11 +3301,11 @@ function Jr(r) {
   );
 }
 const qr = () => {
-  const r = D();
-  return r.parentStore ? /* @__PURE__ */ h(Ks, { parentStore: r.parentStore }) : /* @__PURE__ */ h(Us, {});
+  const r = F();
+  return r.parentStore ? /* @__PURE__ */ h(Bs, { parentStore: r.parentStore }) : /* @__PURE__ */ h(Hs, {});
 };
 qr.displayName = "Slot";
-const Be = new Y(
+const Ke = new J(
   qr,
   "Slot",
   void 0,
@@ -3291,46 +3317,46 @@ const Be = new Y(
   void 0,
   void 0,
   "slot"
-), Bs = ({ parentStore: r }) => {
-  const { key: e } = Q(), { viewerProps: t, data: n, templateProps: o } = Rs();
-  return /* @__PURE__ */ h(bt, { value: r, children: /* @__PURE__ */ h(Pr, { value: t, children: /* @__PURE__ */ h(Er, { value: n, children: o[e] }) }) });
-}, Ks = P("SlotContent", Bs), Ws = () => {
-  const { key: r } = Q();
-  return /* @__PURE__ */ ke(Hs, { children: [
+), Ws = ({ parentStore: r }) => {
+  const { key: e } = X(), { viewerProps: t, data: n, templateProps: o } = $s();
+  return /* @__PURE__ */ h(Tt, { value: r, children: /* @__PURE__ */ h(Er, { value: t, children: /* @__PURE__ */ h(Pr, { value: n, children: o[e] }) }) });
+}, Bs = P("SlotContent", Ws), Ks = () => {
+  const { key: r } = X();
+  return /* @__PURE__ */ De(Us, { children: [
     "Slot: '",
     r,
     "'"
   ] });
-}, Us = P("SlotPlaceholder", Ws), Hs = $.div`
+}, Hs = P("SlotPlaceholder", Ks), Us = R.div`
   background-color: rgb(150, 150, 150, 25%);
   padding: 5px;
-`, nt = new ce(
-  Be.type,
+`, at = new ce(
+  Ke.type,
   [],
   [],
   [],
-  qe,
+  Ye,
   void 0,
   void 0,
-  Be.kind
+  Ke.kind
 ), Js = Dn.default(!0).calculable(!1).hinted("Store data in parent form").named("Store data in parent form");
 function qs(r) {
-  const e = $r(r);
+  const e = Rr(r);
   return new ce(
     e,
     Ae({
       storeDataInParentForm: Js
     }),
     [],
-    Hr,
-    qe,
+    Ur,
+    Ye,
     void 0,
     void 0,
     "template"
   );
 }
-var re, ne, Ve, oe, ze;
-const Tt = class Tt {
+var re, ne, ke, oe, Me;
+const xt = class xt {
   /**
    * Creates an instance of the {@link View}.
    * @param models the components metadata.
@@ -3344,14 +3370,14 @@ const Tt = class Tt {
     y(this, oe);
     y(this, re, /* @__PURE__ */ new Map());
     y(this, ne, /* @__PURE__ */ new Map());
-    y(this, Ve, new Array());
+    y(this, ke, new Array());
     /**
      * Adds a wrapper to the list of viewers for this viewer wrapper.
      * @param wrapper  the viewer wrapper to be added. The wrapper is a component that wraps the form viewer.
      * @returns the {@link View} instance.
      */
-    a(this, "withViewerWrapper", (e) => (u(this, Ve).push(e), this));
-    this.define(B), this.define(Le), this.define(Be), e.forEach(this.define.bind(this));
+    a(this, "withViewerWrapper", (e) => (u(this, ke).push(e), this));
+    this.define(B), this.define(We), this.define(Ke), e.forEach(this.define.bind(this));
   }
   /**
    * Static wrapper for the {@link View} constructor.
@@ -3359,7 +3385,7 @@ const Tt = class Tt {
    * @returns the {@link View} instance.
    */
   static create(e) {
-    return new Tt(e);
+    return new xt(e);
   }
   /**
    * Defines the component's metadata for the form viewer.
@@ -3398,7 +3424,7 @@ const Tt = class Tt {
    * @returns the viewer wrappers array.
    */
   get viewerWrappers() {
-    return [...u(this, Ve)];
+    return [...u(this, ke)];
   }
   /**
    * Applies the given CSS loader to the component based on the BiDi layout.
@@ -3407,7 +3433,7 @@ const Tt = class Tt {
    * @returns the {@link View} instance.
    */
   withCssLoader(e, t) {
-    return e === "common" ? (b(this, oe, ze).call(this, Z.LTR, t), b(this, oe, ze).call(this, Z.RTL, t)) : b(this, oe, ze).call(this, e, t), this;
+    return e === "common" ? (b(this, oe, Me).call(this, Q.LTR, t), b(this, oe, Me).call(this, Q.RTL, t)) : b(this, oe, Me).call(this, e, t), this;
   }
   /**
    * Retrieves the CSS loaders for a given BiDi.
@@ -3418,20 +3444,20 @@ const Tt = class Tt {
     return u(this, ne).get(e) ?? [];
   }
 };
-re = new WeakMap(), ne = new WeakMap(), Ve = new WeakMap(), oe = new WeakSet(), ze = function(e, t) {
+re = new WeakMap(), ne = new WeakMap(), ke = new WeakMap(), oe = new WeakSet(), Me = function(e, t) {
   u(this, ne).set(e, [...u(this, ne).get(e) ?? [], t]);
 };
-let me = Tt;
-const Ti = me.create;
-var x, M;
-const Vt = class Vt {
+let ge = xt;
+const Ti = ge.create;
+var O, M;
+const At = class At {
   constructor(e) {
     /**
      * Modifies the component's metadata builder with custom options.
      * @param opts the custom options.
      * @returns the modified instance of the builder.
      */
-    y(this, x);
+    y(this, O);
     /**
      * Definer class data.
      * @template T React component property type.
@@ -3442,25 +3468,25 @@ const Vt = class Vt {
      * @param name the component name.
      * @returns the modified Definer class instance.
      */
-    a(this, "name", (e) => b(this, x, M).call(this, { name: e }));
+    a(this, "name", (e) => b(this, O, M).call(this, { name: e }));
     /**
      * Sets the kind of the component.
      * @param kind the component kind.
      * @returns the modified Definer class instance.
      */
-    a(this, "kind", (e) => b(this, x, M).call(this, { kind: e }));
+    a(this, "kind", (e) => b(this, O, M).call(this, { kind: e }));
     /**
      * Sets the icon of the component.
      * @param icon the component icon.
      * @returns the modified Definer class instance.
      */
-    a(this, "icon", (e) => b(this, x, M).call(this, { icon: e }));
+    a(this, "icon", (e) => b(this, O, M).call(this, { icon: e }));
     /**
      * Sets the category of the component.
      * @param category the component category.
      * @returns the modified Definer class instance.
      */
-    a(this, "category", (e) => b(this, x, M).call(this, { category: e }));
+    a(this, "category", (e) => b(this, O, M).call(this, { category: e }));
     /**
      * Sets the type of the component.
      * @param type the component type.
@@ -3472,25 +3498,25 @@ const Vt = class Vt {
      * @param properties the metadata of the component's properties.
      * @returns the modified Definer class instance.
      */
-    a(this, "props", (e) => b(this, x, M).call(this, { properties: e }));
+    a(this, "props", (e) => b(this, O, M).call(this, { properties: e }));
     /**
      * Sets the component CSS metadata.
      * @param css the component CSS metadata.
      * @returns the modified Definer class instance.
      */
-    a(this, "css", (e) => b(this, x, M).call(this, { cssObject: e }));
+    a(this, "css", (e) => b(this, O, M).call(this, { cssObject: e }));
     /**
      * Adds the metadata of the component's actions. **Internal use only.**
      * @param fn the function that initializes an actions on a component.
      * @returns the modified Definer class instance.
      */
-    a(this, "actions", (e) => b(this, x, M).call(this, { actionsInitializer: e }));
+    a(this, "actions", (e) => b(this, O, M).call(this, { actionsInitializer: e }));
     /**
      * Adds the custom component to be displayed in the component list. **Internal use only.**
      * @param customPreview the custom component.
      * @returns the modified Definer class instance.
      */
-    a(this, "preview", (e) => b(this, x, M).call(this, { customPreview: e }));
+    a(this, "preview", (e) => b(this, O, M).call(this, { customPreview: e }));
     this.data = { component: e };
   }
   /**
@@ -3502,7 +3528,7 @@ const Vt = class Vt {
   static define(e, t) {
     if (!(t ?? e.displayName ?? e.name))
       throw Error("Anonymous components are not allowed!");
-    const o = new Vt(e);
+    const o = new At(e);
     return t && o.type(t), o;
   }
   /**
@@ -3516,17 +3542,17 @@ const Vt = class Vt {
    * @returns component metadata for the form builder and form viewer.
    */
   build() {
-    const e = Ae(this.data.properties), t = $e(this.data.cssObject), n = $e(Je), o = e.filter((d) => d.valued === !0), s = o[0];
+    const e = Ae(this.data.properties), t = Ie(this.data.cssObject), n = Ie(Ze), o = e.filter((d) => d.valued === !0), s = o[0];
     o.length > 1 && console.warn(`Several annotations with the "valued" property were found. There should be only one "valued" property in the component description! The annotation with the key "${o[0].key}" will be used.`);
-    const i = s ?? e.find((d) => d.name === "value"), c = new Y(
+    const i = s ?? e.find((d) => d.name === "value"), c = new J(
       this.data.component,
       this.data.name || this.getType(),
       this.data.actionsInitializer,
       i == null ? void 0 : i.key,
       i == null ? void 0 : i.type,
-      mr(e),
-      Re(t),
-      Re(n),
+      gr(e),
+      Le(t),
+      Le(n),
       this.getType(),
       this.data.icon,
       this.data.kind
@@ -3535,7 +3561,7 @@ const Vt = class Vt {
       e,
       t,
       n,
-      qe,
+      Ye,
       this.data.customPreview,
       i,
       this.data.kind
@@ -3543,11 +3569,11 @@ const Vt = class Vt {
     return { model: c, meta: l, category: this.data.category };
   }
 };
-x = new WeakSet(), M = function(e) {
+O = new WeakSet(), M = function(e) {
   return Object.assign(this.data, e), this;
 };
-let dt = Vt;
-const Vi = dt.define, Zs = rr`
+let gt = At;
+const Vi = gt.define, Zs = nr`
   font-size: 12px;
   color: var(--red-600);
   margin-top: 0.25rem;
@@ -3561,36 +3587,36 @@ const Vi = dt.define, Zs = rr`
   @media (prefers-color-scheme: dark) {
     color: var(--red-300);
   }
-`, Ys = $.div`
+`, Ys = R.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-`, Zr = ({ children: r, error: e, className: t }) => /* @__PURE__ */ ke(Ys, { children: [
+`, Zr = ({ children: r, error: e, className: t }) => /* @__PURE__ */ De(Ys, { children: [
   r,
-  e && /* @__PURE__ */ h("p", { className: ft(t, Zs), children: e })
+  e && /* @__PURE__ */ h("p", { className: wt(t, Zs), children: e })
 ] });
 Zr.displayName = "DefaultErrorMessage";
-const ht = new Y(Zr), ot = new ce(Le.type, [], [], [], []), Xt = new ce(
+const yt = new J(Zr), ct = new ce(We.type, [], [], [], []), _t = new ce(
   B.type,
-  Ae({ children: An }),
-  Rr,
+  Ae({ children: xn }),
+  $r,
   [],
-  qe,
+  Ye,
   void 0,
   void 0,
   "container"
-), _t = new ce(
-  ht.type,
+), er = new ce(
+  yt.type,
   Ae({
-    className: gr
+    className: yr
   }),
   [],
   [],
   []
-), er = "templates";
+), tr = "templates";
 var N, se, ie;
-const kt = class kt extends me {
+const Ot = class Ot extends ge {
   /**
    * Creates metadata for form builder components.
    * @param builderComponents the array of metadata of form builder components.
@@ -3600,9 +3626,9 @@ const kt = class kt extends me {
     y(this, N, /* @__PURE__ */ new Map());
     y(this, se, /* @__PURE__ */ new Map());
     y(this, ie, /* @__PURE__ */ new Map([
-      [_t.type, _t]
+      [er.type, er]
     ]));
-    this.builderComponents = t, u(this, N).set(Xt.type, Xt), u(this, N).set(ot.type, ot), u(this, N).set(nt.type, nt), this.builderComponents.push({ meta: nt, model: Be, category: er }), t.map(({ meta: o }) => o).forEach((o) => {
+    this.builderComponents = t, u(this, N).set(_t.type, _t), u(this, N).set(ct.type, ct), u(this, N).set(at.type, at), this.builderComponents.push({ meta: at, model: Ke, category: tr }), t.map(({ meta: o }) => o).forEach((o) => {
       u(this, N).set(o.type, o);
     });
   }
@@ -3613,7 +3639,7 @@ const kt = class kt extends me {
    */
   getMeta(t) {
     const n = u(this, N).get(t);
-    return n || ot;
+    return n || ct;
   }
   /**
    * Returns the component metadata for the specified component type name or undefined.
@@ -3678,7 +3704,7 @@ const kt = class kt extends me {
    */
   withTemplates(t) {
     return t.forEach((n) => {
-      const o = kt.createTemplateComponent(n);
+      const o = Ot.createTemplateComponent(n);
       this.define(o.model), u(this, N).set(o.meta.type, o.meta), this.builderComponents.push(o);
     }), this;
   }
@@ -3689,11 +3715,11 @@ const kt = class kt extends me {
    */
   static createTemplateComponent(t) {
     const n = Jr(t);
-    return { meta: qs(t), model: n, category: er };
+    return { meta: qs(t), model: n, category: tr };
   }
 };
 N = new WeakMap(), se = new WeakMap(), ie = new WeakMap();
-let tr = kt;
+let rr = Ot;
 const ki = `declare interface IFormData {
   /**
    * @returns the {@link Record} with all the form data.
@@ -3747,8 +3773,8 @@ const ki = `declare interface IFormData {
    */
   clear(): void
 }`, Di = (r, e = !0) => r.map((t) => ({
-  value: xt(t) ? t.value : t,
-  label: xt(t) ? t.label : e ? rn(t) : t
+  value: zt(t) ? t.value : t,
+  label: zt(t) ? t.label : e ? rn(t) : t
 })), Fi = (r, e, t) => new Promise((n, o) => {
   if (document.getElementById(r))
     return n();
@@ -3756,89 +3782,89 @@ const ki = `declare interface IFormData {
   s.id = r, s.rel = t, s.href = e, s.onload = () => {
     n();
   }, s.onerror = o, document.head.appendChild(s);
-}), Ai = (r) => {
+}), xi = (r) => {
   var t;
   const e = document.getElementById(r);
   (t = e == null ? void 0 : e.parentNode) == null || t.removeChild(e);
 };
 export {
   V as ActionDefinition,
-  st as ActionEventArgs,
+  ut as ActionEventArgs,
   Ci as ActionEventArgsDeclaration,
-  De as Annotation,
-  Me as AnnotationBuilder,
-  je as ArrayBuilder,
-  vr as AsyncFunction,
-  pr as BaseBuilder,
-  Z as BiDi,
+  Fe as Annotation,
+  Re as AnnotationBuilder,
+  $e as ArrayBuilder,
+  G as AsyncFunction,
+  fr as BaseBuilder,
+  Q as BiDi,
   bn as BuilderOptions,
-  tr as BuilderView,
-  z as CalculableResult,
+  rr as BuilderView,
+  j as CalculableResult,
   qn as ComponentData,
   Jn as ComponentDataEvents,
-  Er as ComponentDataProvider,
-  Hn as ComponentKeyChangedEventArgs,
+  Pr as ComponentDataProvider,
+  Un as ComponentKeyChangedEventArgs,
   Dr as ComponentState,
-  R as ComponentStore,
+  $ as ComponentStore,
   Nr as ComponentTree,
-  dr as ContainerAnnotation,
-  at as DataValidator,
+  hr as ContainerAnnotation,
+  ht as DataValidator,
   Or as DefaultWrapper,
-  yt as DidMountEvent,
+  St as DidMountEvent,
   gn as EventAnnotation,
-  pe as EventStream,
-  et as Form,
-  zs as FormViewer,
-  St as FormViewerPropsStore,
+  fe as EventStream,
+  ot as Form,
+  js as FormViewer,
+  kt as FormViewerPropsStore,
   ki as IFormDataDeclaration,
-  Rt as KeySymbol,
-  Ye as Language,
-  tt as LocalizationStore,
+  It as KeySymbol,
+  Ge as Language,
+  st as LocalizationStore,
   ce as Meta,
-  Y as Model,
+  J as Model,
   yn as ModuleAnnotation,
-  En as NodeAnnotationBuilder,
+  Pn as NodeAnnotationBuilder,
   Cn as OneOfBuilder,
-  ct as PersistedFormVersion,
-  hr as PropertyAnnotation,
-  fr as QuantifierBuilder,
-  js as SDiv,
+  pt as PersistedFormVersion,
+  pr as PropertyAnnotation,
+  mr as QuantifierBuilder,
+  zs as SDiv,
   Sn as SomeOfBuilder,
-  lt as Store,
+  ft as Store,
   Yn as StoreContext,
-  bt as StoreProvider,
+  Tt as StoreProvider,
   vn as StyleAnnotation,
   uo as SuppressResizeObserverErrors,
-  It as SyncEvent,
-  Br as TemplateField,
-  gt as TypedBuilder,
-  me as View,
-  Pr as ViewerPropsProvider,
-  vt as WillUnmountEvent,
+  Kt as SyncEvent,
+  Wr as TemplateField,
+  Ct as TypedBuilder,
+  ge as View,
+  Er as ViewerPropsProvider,
+  Pt as WillUnmountEvent,
   gi as array,
   Dn as boolean,
-  Ct as calculatePropertyValue,
+  Vt as calculatePropertyValue,
   So as checkSlotCondition,
   wi as className,
   yi as color,
-  Je as commonStyles,
-  yr as containerStyles,
+  Ze as commonStyles,
+  vr as containerStyles,
   Nn as createActionValuesFromObject,
-  j as createAnnotation,
-  Fe as createNonNullableContext,
-  k as createProperty,
+  z as createAnnotation,
+  xe as createNonNullableContext,
+  D as createProperty,
   Ti as createView,
   mi as date,
   Vi as define,
-  Wt as emotionCache,
+  Jt as emotionCache,
   Si as emptyComponentStore,
-  ht as errorMessageModel,
-  Mt as event,
-  Kn as findTreeElementDepth,
-  $r as generateTemplateTypeName,
-  Cs as generateUniqueName,
-  mr as getDefault,
-  Re as getDefaultCss,
+  yt as errorMessageModel,
+  Lt as event,
+  Bn as findTreeElementDepth,
+  Rr as generateTemplateTypeName,
+  Ss as generateUniqueName,
+  gr as getDefault,
+  Le as getDefaultCss,
   C as getFluentCompatibleId,
   Ln as getFluentData,
   ui as getKey,
@@ -3846,43 +3872,42 @@ export {
   mn as groupBy,
   Vn as htmlAttributes,
   Zn as initFormFields,
-  Le as internalErrorModel,
+  We as internalErrorModel,
   hi as isContainer,
-  Ze as isFunctionalProperty,
+  Qe as isFunctionalProperty,
   Sr as isLocalizedProperty,
-  wt as isPromise,
+  Et as isPromise,
   di as isProperty,
-  jn as isString,
+  zn as isString,
   Tn as isUniqueKey,
-  Ei as isValidatorPropertyBlockType,
+  Pi as isValidatorPropertyBlockType,
   pi as key,
   Fi as loadResource,
-  $t as nameAutorun,
+  Wt as nameAutorun,
   L as nameObservable,
   P as namedObserver,
-  An as node,
+  xn as node,
   fi as number,
-  Oe as oneOf,
+  ze as oneOf,
   On as renderWhen,
   B as screenModel,
   Fn as size,
-  Be as slotModel,
+  Ke as slotModel,
   bi as someOf,
-  gr as string,
-  Pi as testFluentLocalization,
+  yr as string,
+  Ei as testFluentLocalization,
   Ae as toArray,
   Di as toLabeledValues,
-  xn as tooltipProps,
+  An as tooltipProps,
   vi as tooltipType,
-  it as treeForEach,
-  Ai as unloadResource,
-  Q as useComponentData,
-  Vs as useDisposable,
-  Ao as useErrorModel,
-  ks as useForwardRef,
-  D as useStore,
-  Eo as useTooltipType,
-  G as useViewerProps,
+  dt as treeForEach,
+  xi as unloadResource,
+  X as useComponentData,
+  ks as useDisposable,
+  xo as useErrorModel,
+  F as useStore,
+  Po as useTooltipType,
+  q as useViewerProps,
   kn as validation
 };
 //# sourceMappingURL=index.js.map

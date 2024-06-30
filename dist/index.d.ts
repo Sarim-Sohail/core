@@ -1706,6 +1706,10 @@ export declare interface FormViewerProps {
      */
     componentWrapper?: ComponentType<any>;
     /**
+     * The default error wrapper used when errorType is not specified in the form.
+     */
+    errorWrapper?: ComponentType<ErrorWrapperProps>;
+    /**
      * Display resolution type.
      */
     viewMode?: ViewMode;
@@ -1772,6 +1776,10 @@ export declare class FormViewerPropsStore {
      * The full language code passed in the FormViewer properties.
      */
     propsLanguage?: Language;
+    /**
+     * The default error wrapper used when errorType is not specified in the form.
+     */
+    errorWrapper?: ComponentType<ErrorWrapperProps>;
     /**
      * Constructs a new FormViewerPropsStore from the given FormViewerProps.
      * @param formViewerProps the FormViewer props.
@@ -3127,14 +3135,6 @@ export declare function useDisposable<T extends IDisposable>(factory: () => T): 
  * @returns the model of React component used to display the error.
  */
 export declare const useErrorModel: () => Model<ErrorWrapperProps>;
-
-/**
- * Sets the forwarded ref value.
- * @param value the value of ref.
- * @param ref the forwarded ref.
- * @template T the type of value.
- */
-export declare function useForwardRef<T>(value?: T, ref?: ForwardedRef<T>): void;
 
 /**
  * **Internal use only.**
